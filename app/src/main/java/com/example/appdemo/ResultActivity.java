@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -92,8 +93,6 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-
-
 //        per1.setText("1");
 //        per2.setText("2");
 //        per3.setText("3");
@@ -106,7 +105,7 @@ public class ResultActivity extends AppCompatActivity {
 //        anh2.setImageResource(R.drawable.chuoi);
 //        anh3.setImageResource(R.drawable.dua);
 //        anh4.setImageResource(R.drawable.dudu);
-/*
+
         //get intent
         Intent i = getIntent();
         nhan11 = i.getStringExtra("nhan1");
@@ -123,7 +122,8 @@ public class ResultActivity extends AppCompatActivity {
         check22 = i.getStringExtra("check2");
         check33 = i.getStringExtra("check3");
         check44 = i.getStringExtra("check4");
-*/
+
+        /*
         nhan11 = "0";
         nhan22 = "1";
         nhan33 = "2";
@@ -132,7 +132,7 @@ public class ResultActivity extends AppCompatActivity {
         ac11 = "84.031";
         ac22 = "12.1212424";
         ac33 = "2.00082";
-        ac44 = "1.0124";
+        ac44 = "1.0124";*/
         //after intent ++ Show
         nhan1 = nhanCay[Integer.parseInt(nhan11)];
         nhan2 = nhanCay[Integer.parseInt(nhan22)];
@@ -187,6 +187,13 @@ public class ResultActivity extends AppCompatActivity {
         anh4.setImageResource(img4);
 
         //----------------------BUTTON
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ResultActivity.this, DetailedActivity.class);
+                startActivity(i);
+            }
+        });
 
     }
 

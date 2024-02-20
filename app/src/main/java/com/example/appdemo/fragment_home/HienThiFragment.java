@@ -53,9 +53,9 @@ public class HienThiFragment extends Fragment {
         reload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), ResultActivity.class);
-                startActivity(i);
-                /*
+//                Intent i = new Intent(getActivity(), ResultActivity.class);
+//                startActivity(i);
+
                 loadingAlert.startAlertDialog();
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
@@ -91,7 +91,7 @@ public class HienThiFragment extends Fragment {
                             }
                         });
                 RequestQueue queue = Volley.newRequestQueue(getActivity());
-                queue.add(stringRequest);*/
+                queue.add(stringRequest);
             }
         });
         return  v;
