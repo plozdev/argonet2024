@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AgroNet Kon Tum - Hệ Thống Mạng Nông Nghiệp</string>
+
+    <string name="not_update">...</string>
+
+    <string name="ac2">KẾT QUẢ</string>
+    <string name="ac1">ArgoNet</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

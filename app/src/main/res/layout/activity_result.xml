@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E2E5DE"
+    tools:context=".ResultActivity">
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="10dp"
+        app:cardCornerRadius="30dp">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kết quả các loại cây trồng phù hợp với mảnh đất của bạn:"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/main"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="15dp"
+                android:ems="10"
+                android:layout_marginTop="35dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:id="@+id/listImage1"
+                        android:src="@drawable/tao"
+                        android:scaleType="centerCrop"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerVertical="true"
+                        app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/listName1"
+                        android:text="Name"
+                        android:textColor="@color/main"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_toEndOf="@id/listImage1"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listPercent1"
+                        android:layout_toEndOf="@id/listName1"
+                        android:layout_marginStart="25dp"
+                        android:layout_centerVertical="true"
+                        android:text="10.02%"
+                        android:textSize="18sp"
+                        android:textColor="@color/main"/>
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/moreInfo1"
+                        android:background="@drawable/next_icon"
+                        app:backgroundTint="@null"
+                        android:layout_toEndOf="@id/listName1"
+                        android:layout_marginStart="100dp"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:id="@+id/listImage2"
+                        android:src="@drawable/tao"
+                        android:scaleType="centerCrop"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerVertical="true"
+                        app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/listName2"
+                        android:text="Name"
+                        android:textColor="@color/main"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_toEndOf="@id/listImage2"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listPercent2"
+                        android:layout_toEndOf="@id/listName2"
+                        android:layout_marginStart="25dp"
+                        android:layout_centerVertical="true"
+                        android:text="10%"
+                        android:textSize="18sp"
+                        android:textColor="@color/main"/>
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/moreInfo2"
+                        android:background="@drawable/next_icon"
+                        app:backgroundTint="@null"
+                        android:layout_toEndOf="@id/listName2"
+                        android:layout_marginStart="100dp"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:id="@+id/listImage3"
+                        android:src="@drawable/tao"
+                        android:scaleType="centerCrop"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerVertical="true"
+                        app:shapeAppearanceOverlay="@style/roundedImageViewRounded"/>
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/listName3"
+                        android:text="Name"
+                        android:textColor="@color/main"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_toEndOf="@id/listImage3"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/listPercent3"
+                        android:layout_toEndOf="@id/listName3"
+                        android:layout_marginStart="25dp"
+                        android:layout_centerVertical="true"
+                        android:text="10%"
+                        android:textSize="18sp"
+                        android:textColor="@color/main"/>
+                    <Button
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/moreInfo3"
+                        android:background="@drawable/next_icon"
+                        app:backgroundTint="@null"
+                        android:layout_toEndOf="@id/listName3"
+                        android:layout_marginStart="100dp"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/listImage4"
+                        android:layout_width="65dp"
+                        android:layout_height="65dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/tao"
+                        app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+                    <TextView
+                        android:id="@+id/listName4"
+                        android:layout_width="120dp"
+                        android:layout_height="30dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_toEndOf="@id/listImage4"
+                        android:text="Name"
+                        android:textColor="@color/main"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/listPercent4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="25dp"
+                        android:layout_toEndOf="@id/listName4"
+                        android:text="10%"
+                        android:textColor="@color/main"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/moreInfo4"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="100dp"
+                        android:layout_toEndOf="@id/listName4"
+                        android:background="@drawable/next_icon"
+                        app:backgroundTint="@null" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

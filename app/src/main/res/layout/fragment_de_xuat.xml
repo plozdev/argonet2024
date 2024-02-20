@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E2E5DE"
+    tools:context=".fragment_home.DeXuatFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="10dp"
+        app:cardCornerRadius="30dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/N1"
+                android:ems="10"
+                android:text="Lượng Đạm (N):"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="76dp"
+                android:layout_marginStart="15dp"/>
+
+            <EditText
+                android:layout_width="220dp"
+                android:layout_height="45dp"
+                android:id="@+id/N"
+                android:background="@drawable/edittext_custom"
+                android:layout_marginTop="67dp"
+                android:ems="10"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:paddingStart="15dp"
+                android:layout_toRightOf="@+id/N1"/>
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/P1"
+                android:ems="10"
+                android:text="Lượng Photpho (P):"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="152dp"
+                android:layout_marginStart="15dp"/>
+
+            <EditText
+                android:layout_width="220dp"
+                android:layout_height="45dp"
+                android:id="@+id/P"
+                android:background="@drawable/edittext_custom"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/N"
+                android:ems="10"
+                android:hint=""
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:paddingStart="15dp"
+                android:layout_toRightOf="@+id/P1"/>
+
+            <TextView
+                android:layout_width="160dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/K1"
+                android:ems="10"
+                android:text="Lượng Đạm (K):"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="226dp"
+                android:layout_marginStart="15dp"/>
+            <EditText
+                android:layout_width="220dp"
+                android:layout_height="45dp"
+                android:id="@+id/K"
+                android:background="@drawable/edittext_custom"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/P"
+                android:ems="10"
+                android:hint=""
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:paddingStart="15dp"
+                android:layout_toRightOf="@+id/K1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/alert"
+                android:textStyle="italic"
+                android:textColor="#E53935"
+                android:text="Lưu ý: Đơn vị đo là kg/ha"
+                android:textSize="16sp"
+                android:ems="10"
+                android:layout_below="@+id/K"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="15sp"/>
+            <Button
+                android:layout_width="275dp"
+                android:layout_height="60dp"
+                android:id="@+id/startButton"
+                android:text="BẮT ĐẦU"
+                android:textColor="@color/sub"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/K"
+                android:layout_marginTop="70dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/resultText"
+                android:textSize="50sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text=""
+                android:ems="10"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:visibility="invisible"
+                />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
