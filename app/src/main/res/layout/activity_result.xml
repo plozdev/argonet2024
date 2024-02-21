@@ -25,7 +25,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Kết quả các loại cây trồng phù hợp với mảnh đất của bạn:"
+                android:text="@string/title_result"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/main"

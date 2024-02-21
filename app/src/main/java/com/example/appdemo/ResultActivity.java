@@ -69,15 +69,14 @@ public class ResultActivity extends AppCompatActivity {
     private String ac1,ac2,ac3,ac4;
     //Anh
     private int img1,img2,img3,img4;
-    //Check pho bien or none
-    private String check1,check2,check3,check4;
+
     //---------------------------
     //String de get intent
     //Ten
     private String nhan11,nhan22,nhan33,nhan44;
     //Phan tram
     private String ac11,ac22,ac33,ac44;
-    private String check11,check22,check33,check44;
+
     //---------------------------
     //SHOW
     //Nut bam
@@ -93,18 +92,6 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-//        per1.setText("1");
-//        per2.setText("2");
-//        per3.setText("3");
-//        per4.setText("4");
-//        name1.setText("1");
-//        name2.setText("2");
-//        name3.setText("3");
-//        name4.setText("4");
-//        anh1.setImageResource(R.drawable.tao);
-//        anh2.setImageResource(R.drawable.chuoi);
-//        anh3.setImageResource(R.drawable.dua);
-//        anh4.setImageResource(R.drawable.dudu);
 
         //get intent
         Intent i = getIntent();
@@ -117,37 +104,6 @@ public class ResultActivity extends AppCompatActivity {
         ac22 = i.getStringExtra("ac2");
         ac33 = i.getStringExtra("ac3");
         ac44 = i.getStringExtra("ac4");
-
-        check11 = i.getStringExtra("check1");
-        check22 = i.getStringExtra("check2");
-        check33 = i.getStringExtra("check3");
-        check44 = i.getStringExtra("check4");
-
-        /*
-        nhan11 = "0";
-        nhan22 = "1";
-        nhan33 = "2";
-        nhan44 = "3";
-
-        ac11 = "84.031";
-        ac22 = "12.1212424";
-        ac33 = "2.00082";
-        ac44 = "1.0124";*/
-        //after intent ++ Show
-        nhan1 = nhanCay[Integer.parseInt(nhan11)];
-        nhan2 = nhanCay[Integer.parseInt(nhan22)];
-        nhan3 = nhanCay[Integer.parseInt(nhan33)];
-        nhan4 = nhanCay[Integer.parseInt(nhan44)];
-
-        ac1 = roundToTwoDecimalPlaces(ac11);
-        ac2 = roundToTwoDecimalPlaces(ac22);
-        ac3 = roundToTwoDecimalPlaces(ac33);
-        ac4 = roundToTwoDecimalPlaces(ac44);
-
-        img1 = nhanImg[Integer.parseInt(nhan11)];
-        img2 = nhanImg[Integer.parseInt(nhan22)];
-        img3 = nhanImg[Integer.parseInt(nhan33)];
-        img4 = nhanImg[Integer.parseInt(nhan44)];
 
         //tham chieu len listview
         btn1 = findViewById(R.id.moreInfo1);
@@ -170,6 +126,35 @@ public class ResultActivity extends AppCompatActivity {
         anh3 = findViewById(R.id.listImage3);
         anh4 = findViewById(R.id.listImage4);
 
+        /*
+        nhan11 = "0";
+        nhan22 = "1";
+        nhan33 = "2";
+        nhan44 = "3";
+
+        ac11 = "84.031";
+        ac22 = "12.1212424";
+        ac33 = "2.00082";
+        ac44 = "1.0124";*/
+
+
+        //after intent ++ Show
+        nhan1 = nhanCay[Integer.parseInt(nhan11)];
+        nhan2 = nhanCay[Integer.parseInt(nhan22)];
+        nhan3 = nhanCay[Integer.parseInt(nhan33)];
+        nhan4 = nhanCay[Integer.parseInt(nhan44)];
+
+        ac1 = roundToTwoDecimalPlaces(ac11);
+        ac2 = roundToTwoDecimalPlaces(ac22);
+        ac3 = roundToTwoDecimalPlaces(ac33);
+        ac4 = roundToTwoDecimalPlaces(ac44);
+
+        img1 = nhanImg[Integer.parseInt(nhan11)];
+        img2 = nhanImg[Integer.parseInt(nhan22)];
+        img3 = nhanImg[Integer.parseInt(nhan33)];
+        img4 = nhanImg[Integer.parseInt(nhan44)];
+
+
         //SHOW
         name1.setText(nhan1);
         name2.setText(nhan2);
@@ -191,6 +176,22 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(ResultActivity.this, DetailedActivity.class);
+
+                i.putExtra("name1",nhan1);
+                i.putExtra("name2",nhan2);
+                i.putExtra("name3",nhan3);
+                i.putExtra("name4",nhan4);
+
+                i.putExtra("phantram1",ac1);
+                i.putExtra("phantram2",ac2);
+                i.putExtra("phantram3",ac3);
+                i.putExtra("phantram4",ac4);
+
+                i.putExtra("anh1",img1);
+                i.putExtra("anh2",img2);
+                i.putExtra("anh3",img3);
+                i.putExtra("anh4",img4);
+
                 startActivity(i);
             }
         });

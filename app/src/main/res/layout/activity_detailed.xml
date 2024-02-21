@@ -42,53 +42,76 @@
         android:text="Phần trăm phù hợp:"
         android:textColor="@color/main"
         android:textStyle="bold"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
         android:textSize="18sp"/>
     <TextView
         android:id="@+id/percent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="2dp"
         android:text="12%"
         android:textColor="@color/black"
         android:textSize="16sp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Phổ biến:"
         android:textColor="@color/main"
         android:textStyle="bold"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:textSize="18sp"/>
     <TextView
         android:id="@+id/type"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:text="YESORNO"
         android:layout_marginTop="2dp"
         android:textColor="@color/black"
         android:textSize="16sp" />
+
     <TextView
         android:id="@+id/typeNote"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:text="NOTE"
         android:textStyle="bold"
         android:textColor="@color/green_tick"
         android:layout_marginTop="10dp"
         android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thời gian sinh trưởng của cây:"
+        android:textColor="@color/main"
+        android:textStyle="bold"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"/>
+    <TextView
+        android:id="@+id/timeImprove"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="time"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Mùa thích hợp:"
         android:textColor="@color/main"
         android:textStyle="bold"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="20dp"
         android:textSize="18sp"/>
     <TextView
@@ -96,29 +119,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="time"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="2dp"
         android:textColor="@color/black"
         android:textSize="16sp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Thuộc loại cây:"
-        android:textColor="@color/main"
-        android:textStyle="bold"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:textSize="18sp"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="bruh"
-        android:textColor="@color/black"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="2dp"
-        android:textSize="16sp"
-        android:id="@+id/daytime"/>
 
 
 

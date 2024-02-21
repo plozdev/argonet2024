@@ -33,7 +33,7 @@ public class DeXuatFragment extends Fragment {
 
 
     TextView result;
-    private String nhan1,nhan2,nhan3,nhan4,ac1,ac2,ac3,ac4,ch1,ch2,ch3,ch4;
+    private String nhan1,nhan2,nhan3,nhan4,ac1,ac2,ac3,ac4;
     private String url = "https://172.28.0.12:5000/predict";
 
     @Override
@@ -72,11 +72,6 @@ public class DeXuatFragment extends Fragment {
                                         ac2 = jsonObject.getString("Acc 2");
                                         ac3 = jsonObject.getString("Acc 3");
                                         ac4 = jsonObject.getString("Acc 4");
-//                                        ket qua check phan loai
-                                        ch1 = jsonObject.getString("Check 1");
-                                        ch2 = jsonObject.getString("Check 2");
-                                        ch3 = jsonObject.getString("Check 3");
-                                        ch4 = jsonObject.getString("Check 4");
 
                                     } catch (JSONException e) {
                                         e.printStackTrace();
@@ -92,11 +87,6 @@ public class DeXuatFragment extends Fragment {
                                     intent.putExtra("ac2",ac2);
                                     intent.putExtra("ac3",ac3);
                                     intent.putExtra("ac4",ac4);
-
-                                    intent.putExtra("check1",ch1);
-                                    intent.putExtra("check2",ch2);
-                                    intent.putExtra("check3",ch3);
-                                    intent.putExtra("check4",ch4);
 
                                     startActivity(intent);
                                 }
