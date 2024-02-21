@@ -6,13 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DetailedActivity">
+    tools:context=".detail.DetailedActivity1">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/detailName"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="15dp"
         android:text="Recipe Name"
         android:textSize="24sp"
         android:textColor="@color/main"
@@ -20,16 +20,16 @@
         android:layout_gravity="center"/>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="360dp"
-        android:layout_height="200dp"
+        android:layout_width="330dp"
+        android:layout_height="183dp"
         android:id="@+id/cardImage"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         app:cardCornerRadius="20dp"
         app:cardElevation="8dp">
         <ImageView
-            android:layout_width="360dp"
-            android:layout_height="200dp"
+            android:layout_width="330dp"
+            android:layout_height="183dp"
             android:id="@+id/detailImage"
             android:layout_gravity="center"
             android:src="@drawable/tao"
@@ -43,10 +43,10 @@
         android:textColor="@color/main"
         android:textStyle="bold"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:textSize="18sp"/>
     <TextView
-        android:id="@+id/percent"
+        android:id="@+id/detailPercent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -62,10 +62,10 @@
         android:textColor="@color/main"
         android:textStyle="bold"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:textSize="18sp"/>
     <TextView
-        android:id="@+id/type"
+        android:id="@+id/detailPhoBien"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -75,7 +75,7 @@
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/typeNote"
+        android:id="@+id/detailNotePhoBien"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -83,7 +83,7 @@
         android:text="NOTE"
         android:textStyle="bold"
         android:textColor="@color/green_tick"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:textSize="16sp" />
 
     <TextView
@@ -93,10 +93,10 @@
         android:textColor="@color/main"
         android:textStyle="bold"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:textSize="18sp"/>
     <TextView
-        android:id="@+id/timeImprove"
+        android:id="@+id/detailTGSinhTruong"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="time"
@@ -112,10 +112,10 @@
         android:textColor="@color/main"
         android:textStyle="bold"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:textSize="18sp"/>
     <TextView
-        android:id="@+id/seasonal"
+        android:id="@+id/detailMuaThichHop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="time"
@@ -124,6 +124,16 @@
         android:textColor="@color/black"
         android:textSize="16sp"/>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#f8425f"
+        android:text="@string/note"
+        android:textStyle="bold|italic"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="15dp"/>
 
 
 </LinearLayout>

@@ -9,11 +9,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.appdemo.detail.DetailedActivity1;
+import com.example.appdemo.detail.DetailedActivity2;
+import com.example.appdemo.detail.DetailedActivity3;
+import com.example.appdemo.detail.DetailedActivity4;
+
 import java.text.DecimalFormat;
 
 
 public class ResultActivity extends AppCompatActivity {
-    // Mang
+    // Mang + CONST
     private int nhanImg[] = {
             R.drawable.tao,
             R.drawable.chuoi,
@@ -61,6 +66,7 @@ public class ResultActivity extends AppCompatActivity {
             "Lúa",
             "Cây Dưa Hấu"
     };
+    private int index1,index2,index3,index4;
     //----------------------------
     //String de truyen di qua detail
     //Ten
@@ -78,7 +84,7 @@ public class ResultActivity extends AppCompatActivity {
     private String ac11,ac22,ac33,ac44;
 
     //---------------------------
-    //SHOW
+    //LAYOUT
     //Nut bam
     public Button btn1,btn2,btn3,btn4;
     //percent
@@ -137,22 +143,26 @@ public class ResultActivity extends AppCompatActivity {
         ac33 = "2.00082";
         ac44 = "1.0124";*/
 
+        index1 = Integer.parseInt(nhan11);
+        index2 = Integer.parseInt(nhan22);
+        index3 = Integer.parseInt(nhan33);
+        index4 = Integer.parseInt(nhan44);
 
         //after intent ++ Show
-        nhan1 = nhanCay[Integer.parseInt(nhan11)];
-        nhan2 = nhanCay[Integer.parseInt(nhan22)];
-        nhan3 = nhanCay[Integer.parseInt(nhan33)];
-        nhan4 = nhanCay[Integer.parseInt(nhan44)];
+        nhan1 = nhanCay[index1];
+        nhan2 = nhanCay[index2];
+        nhan3 = nhanCay[index3];
+        nhan4 = nhanCay[index4];
 
         ac1 = roundToTwoDecimalPlaces(ac11);
         ac2 = roundToTwoDecimalPlaces(ac22);
         ac3 = roundToTwoDecimalPlaces(ac33);
         ac4 = roundToTwoDecimalPlaces(ac44);
 
-        img1 = nhanImg[Integer.parseInt(nhan11)];
-        img2 = nhanImg[Integer.parseInt(nhan22)];
-        img3 = nhanImg[Integer.parseInt(nhan33)];
-        img4 = nhanImg[Integer.parseInt(nhan44)];
+        img1 = nhanImg[index1];
+        img2 = nhanImg[index2];
+        img3 = nhanImg[index3];
+        img4 = nhanImg[index4];
 
 
         //SHOW
@@ -175,30 +185,60 @@ public class ResultActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(ResultActivity.this, DetailedActivity.class);
+                Intent i = new Intent(ResultActivity.this, DetailedActivity1.class);
 
-                i.putExtra("name1",nhan1);
-                i.putExtra("name2",nhan2);
-                i.putExtra("name3",nhan3);
-                i.putExtra("name4",nhan4);
+                i.putExtra("name",nhan1);
+                i.putExtra("phantram",ac1);
+                i.putExtra("anh",img1);
+                i.putExtra("sonhancay",index1);
+                startActivity(i);
+            }
+        });
 
-                i.putExtra("phantram1",ac1);
-                i.putExtra("phantram2",ac2);
-                i.putExtra("phantram3",ac3);
-                i.putExtra("phantram4",ac4);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ResultActivity.this, DetailedActivity2.class);
 
-                i.putExtra("anh1",img1);
-                i.putExtra("anh2",img2);
-                i.putExtra("anh3",img3);
-                i.putExtra("anh4",img4);
+                i.putExtra("name",nhan2);
+                i.putExtra("phantram",ac2);
+                i.putExtra("anh",img2);
+                i.putExtra("sonhancay",index2);
 
                 startActivity(i);
             }
         });
 
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ResultActivity.this, DetailedActivity3.class);
+
+                i.putExtra("name",nhan3);
+                i.putExtra("phantram",ac3);
+                i.putExtra("anh",img3);
+                i.putExtra("sonhancay",index3);
+
+                startActivity(i);
+            }
+        });
+
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ResultActivity.this, DetailedActivity4.class);
+
+                i.putExtra("name",nhan4);
+                i.putExtra("phantram",ac4);
+                i.putExtra("anh",img4);
+                i.putExtra("sonhancay",index4);
+
+                startActivity(i);
+            }
+        });
     }
 
-    public static String roundToTwoDecimalPlaces(String myString) {
+    private static String roundToTwoDecimalPlaces(String myString) {
         // Convert the string to a double
         double myDouble = Double.parseDouble(myString);
 
