@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,15 +15,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.APPDemo"
-        tools:targetApi="34" >
+        tools:targetApi="34">
         <activity
             android:name=".detail.DetailedActivity4"
+            android:label="Kết quả top 4"
+            android:parentActivityName=".ResultActivity"
             android:exported="false" />
         <activity
             android:name=".detail.DetailedActivity3"
+            android:label="Kết quả top 3"
+            android:parentActivityName=".ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".detail.DetailedActivity2"
+            android:label="Kết quả top 2"
+            android:parentActivityName=".ResultActivity"
             android:exported="false" />
         <activity
             android:name=".detail.DetailedActivity1"
+            android:label="Kết quả top 1"
+            android:parentActivityName=".ResultActivity"
             android:exported="false" />
         <activity
             android:name=".ResultActivity"
@@ -33,7 +44,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/ac1" >
+            android:label="@string/ac1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -9,6 +9,28 @@
     <string name="title_result">Kết quả các loại cây trồng phù hợp với mảnh đất của bạn:</string>
     <string name="phobien_true">Loại cây này khá phổ biến, bạn có thể lựa chọn cây này để trồng</string>
     <string name="phobien_false">Loại cây này chưa được phổ biến lắm, hãy cân nhắc kĩ trước khi trồng</string>
-    <string name="note">Lưu ý: Các con số này chỉ là ước tính chung cho mỗi loại cây trồng. Các loại cây trồng có nhiều giống cây khác nhau vì vậy cần tham khảo thêm các nguồn để xác định được loại giống phù hợp với cây đó</string>
+    <string name="note">Lưu ý: Các con số này chỉ là ước tính chung cho mỗi loại cây trồng. Các loại cây trồng có nhiều giống cây khác nhau vì vậy cần tham khảo thêm các nguồn để xác định được loại giống phù hợp với cây đó.</string>
 
+    <string name="first">Thời vụ trồng chủ yếu là mùa xuân tháng 2 - 4, nếu cây giống ghép sớm có thể trồng từ tháng 11.</string>
+    <string name="mot">Không yêu cầu nghiêm ngặt về thời vụ, có thể trồng quanh năm nhưng tốt nhất nên trồng vào đầu mùa mưa (vùng Đồng bằng Bắc bộ trồng từ tháng 9 - 11, các vùng khác từ tháng 6 - 8).</string>
+    <string name="hai">Khoảng tháng 2 đến tháng 6 hoặc tháng 11, 12 hàng năm.</string>
+    <string name="ba">Mùa xuân, khoảng từ tháng 1 - 4.</string>
+    <string name="bon">Đầu mùa mưa khoảng tháng 5 - 7.</string>
+    <string name="nam">Thời điểm trồng cà phê lý tưởng là vào đầu mùa mưa, cần kết thúc việc trồng trước 1-2 tháng khi vào mùa khô.</string>
+    <string name="sau">Thông thường có hai thời vụ trồng đó là vụ khô (vụ Đông Xuân) và vụ mưa (vụ Mùa). Vì mỗi vùng có điều kiện khí hậu, đất đai khác nhau, nên thời vụ trồng cũng khác nhau. Hãy tìm hiểu thêm về điều kiện  khu vực địa phương trước khi trồng.</string>
+    <string name="bay">Khoảng tháng 12 đến tháng 1 hằng năm.</string>
+    <string name="tam">- Đay cách: gieo từ 15/2 đến 10/3.\n- Đay xanh quả tròn: gieo từ 25/3 đến 15/4.\nĐay xanh quả dài: gieo 10/4 đến 20/4.</string>
+    <string name="chin">Cuối mùa đông (tháng 1 - tháng 2).</string>
+    <string name="motko">Nên gieo trồng cây vào đầu mùa xuân, cây sẽ sinh trưởng tốt vào mùa hè (từ tháng 3).</string>
+    <string name="motmot">Thời điểm tốt nhất là vào vụ Hè Thu, khá thuận tiện cho sự phát triển của cây ngô vào tháng 4 và tháng 5 sau đó thu hoạch vào khoảng tháng 7, 8. Ngoài ra còn có thể trồng vào vụ Đông (tháng 9 - 10).</string>
+    <string name="mothai">Tốt nhất là vào đầu mùa mưa. Tuy nhiên, nếu trồng với lượng ít ta có thể trồng vào nhiều thời vụ khác nhau, miễn là phải tránh thời điểm nắng nóng và rét đậm và sau khi trồng phải cung cấp đủ nước tưới cho cây.</string>
+    <string name="motba">- Vùng cao miền núi phía Bắc đều có thể trồng đậu tằm quanh năm, thời gian trồng phù hợp nhất là mùa mưa từ tháng 4 – 10, nếu bố trí khéo có thể trồng được 2 vụ xuân và thu đông, nhưng tốt nhất là trồng vụ thu đông từ tháng 7 thu hoạch vào cuối năm.\n- Vùng cao Tây Nguyên có nhiệt độ trung bình tháng quanh năm dưới 25°C đều phù hợp trồng đậu tằm, nhưng thời vụ trồng phù hợp là tháng 5 – 10 vào mùa mưa, cũng có thể trồng 1 – 2 vụ, vụ Hè Thu hoặc Thu Đông.</string>
+    <string name="motbon">- Vụ Xuân: Đậu xanh thường được gieo trong tháng 3 là chính, vì gieo sớm hơn, thời tiết còn lạnh.\n- Vụ Hè: Gieo vào cuối tháng 5, đầu tháng 6.\n- Vụ Thu Đông: Phần lớn là để tranh thủ nhân giống có thể gieo từ cuối tháng 8 đến giữa tháng 9, nhưng tốt nhất là trong tháng 8.</string>
+    <string name="motnam">Thời gian thích hợp để trồng dưa lưới là vào khoảng từ tháng 2 đến tháng 9.</string>
+    <string name="motsau">Có thể trồng quanh năm, nếu trồng trong mùa nắng phải đảm bảo chế độ tưới nước, thông thường ở Tây Nguyên có thể trồng vào tháng 6-7 là tốt nhất.</string>
+    <string name="motbay">Có thể trồng đu đủ vụ Xuân (tháng 3-4) hay vụ Thu (tháng 9-10). Đu đủ sau trồng 2,5 tháng thì ra hoa, sau trồng 7 tháng thì cho thu hoạch quả xanh, thu hoạch quả chín thì sau 9 tháng.</string>
+    <string name="mottam">Tháng 2 - tháng 3, vùng núi có thể gieo vào tháng 4.</string>
+    <string name="motchin">Đầu mùa mưa và cuối mùa thu.</string>
+    <string name="haiko">Chưa rõ</string>
+    <string name="haimot">- Vụ Xuân Hè: Do có mùa đông lạnh nên vụ này là vụ chính. Gieo vào cuối tháng 2, trồng 10 - 15/3, thu hoạch cuối tháng 5.\n- Vụ Hè: Trồng khi gặt xong lúa Đông Xuân sớm, giữa tháng 6, thu hoạch cuối tháng 7.</string>
 </resources>

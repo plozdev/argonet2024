@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".detail.DetailedActivity1">
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -95,6 +94,14 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
         android:textSize="18sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(từ khi trồng cho tới lúc thu hoạch)"
+        android:textColor="@color/main"
+        android:textSize="14sp"
+        android:layout_marginStart="15dp"/>
+
     <TextView
         android:id="@+id/detailTGSinhTruong"
         android:layout_width="match_parent"

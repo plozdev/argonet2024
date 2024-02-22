@@ -1,6 +1,5 @@
 package com.example.appdemo.detail;
 
-import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -28,7 +27,7 @@ public class DetailedActivity1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detailed);
+        setContentView(R.layout.activity_detailed1);
         //GET INTENT---------------------------
         Intent i = getIntent();
         nhan = i.getStringExtra("name");
@@ -69,12 +68,84 @@ public class DetailedActivity1 extends AppCompatActivity {
         } else {
             PHOBIEN.setText("Chưa rõ");
             NOTEPHOBIEN.setText("Chưa rõ");
-            NOTEPHOBIEN.setTextColor(Color.parseColor("#FFFFFF"));
+            NOTEPHOBIEN.setTextColor(Color.parseColor("#000000"));
             Log.e("flag","ERROR");
         }
 
         //Time sinh truong + Mua thich hop
-
+        if (index==0) {
+            TIMESINHTRUONG.setText("Khoảng 1,5 – 2 năm");
+            MUATHICHHOP.setText(getText(R.string.first));
+        } else if (index==1) {
+            TIMESINHTRUONG.setText("Khoảng 9 - 12 tháng");
+            MUATHICHHOP.setText(getText(R.string.mot));
+        } else if (index==2) {
+            TIMESINHTRUONG.setText("Khoảng 80 – 90 ngày");
+            MUATHICHHOP.setText(getText(R.string.hai));
+        } else if (index==3) {
+            TIMESINHTRUONG.setText("Khoảng 90 – 100 ngày");
+            MUATHICHHOP.setText(getText(R.string.ba));
+        } else if (index==4) {
+            TIMESINHTRUONG.setText("Khoảng 3 – 6 năm");
+            MUATHICHHOP.setText(getText(R.string.bon));
+        } else if (index==5) {
+            TIMESINHTRUONG.setText("Khoảng 3 – 4 năm");
+            MUATHICHHOP.setText(getText(R.string.nam));
+        } else if (index==6) {
+            TIMESINHTRUONG.setText("Khoảng 100 – 115 ngày");
+            MUATHICHHOP.setText(getText(R.string.sau));
+        } else if (index==7) {
+            TIMESINHTRUONG.setText("Khoảng 2 – 4 năm");
+            MUATHICHHOP.setText(getText(R.string.bay));
+        } else if (index==8) {
+            TIMESINHTRUONG.setText("Khoảng 180 - 230 ngày");
+            MUATHICHHOP.setText(getText(R.string.tam));
+        } else if (index==9) {
+            TIMESINHTRUONG.setText("Khoảng 100 – 140 ngày");
+            MUATHICHHOP.setText(getText(R.string.chin));
+        } else if (index==10) {
+            TIMESINHTRUONG.setText("Khoảng 110 ngày");
+            MUATHICHHOP.setText(getText(R.string.motko));
+        } else if (index==11) {
+            TIMESINHTRUONG.setText("- Bắp tươi: Khoảng 66 – 68 ngày\n" +
+                    "- Bắp khô: Khoảng 95 – 100 ngày");
+            MUATHICHHOP.setText(getText(R.string.motmot));
+        } else if (index==12) {
+            TIMESINHTRUONG.setText("Khoảng 3 năm");
+            MUATHICHHOP.setText(getText(R.string.mothai));
+        } else if (index==13) {
+            TIMESINHTRUONG.setText("Khoảng 75 – 90 ngày");
+            MUATHICHHOP.setText(getText(R.string.motba));
+        } else if (index==14) {
+            TIMESINHTRUONG.setText("Khoảng 50 – 60 ngày");
+            MUATHICHHOP.setText(getText(R.string.motbon));
+        } else if (index==15) {
+            TIMESINHTRUONG.setText("Khoảng 80 – 95 ngày");
+            MUATHICHHOP.setText(getText(R.string.motnam));
+        } else if (index==16) {
+            TIMESINHTRUONG.setText("Khoảng 18 – 22 tháng ");
+            MUATHICHHOP.setText(getText(R.string.motsau));
+        } else if (index==17) {
+            TIMESINHTRUONG.setText("Khoảng 9 – 10 tháng");
+            MUATHICHHOP.setText(getText(R.string.motbay));
+        } else if (index==18) {
+            TIMESINHTRUONG.setText("Khoảng 3 – 4 tháng");
+            MUATHICHHOP.setText(getText(R.string.mottam));
+        } else if (index==19) {
+            TIMESINHTRUONG.setText("- Gieo hạt: Khoảng 2 năm\n" +
+                    "- Chiết cành: Khoảng 1 năm");
+            MUATHICHHOP.setText(getText(R.string.motchin));
+        } else if (index==20) {
+            TIMESINHTRUONG.setText("Khoảng 80 – 150 ngày ");
+            MUATHICHHOP.setText(getText(R.string.haiko));
+        } else if (index==21) {
+            TIMESINHTRUONG.setText("Khoảng 55 – 60 ngày");
+            MUATHICHHOP.setText(getText(R.string.haimot));
+        }  else {
+            TIMESINHTRUONG.setText("Chưa rõ");
+            MUATHICHHOP.setText("Chưa rõ");
+            Log.e("fatal","ERROR");
+        }
 
 
 
