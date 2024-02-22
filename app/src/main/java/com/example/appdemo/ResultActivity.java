@@ -37,6 +37,7 @@ public class ResultActivity extends AppCompatActivity {
             R.drawable.dauxanh,
             R.drawable.dualuoi,
             R.drawable.cam,
+            R.dautam.dudu,
             R.drawable.dautrieu,
             R.drawable.luu,
             R.drawable.lua,
@@ -98,7 +99,7 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-/*
+
         //get intent
         Intent i = getIntent();
         nhan11 = i.getStringExtra("nhan1");
@@ -109,7 +110,7 @@ public class ResultActivity extends AppCompatActivity {
         ac11 = i.getStringExtra("ac1");
         ac22 = i.getStringExtra("ac2");
         ac33 = i.getStringExtra("ac3");
-        ac44 = i.getStringExtra("ac4");*/
+        ac44 = i.getStringExtra("ac4");
 
         //tham chieu len listview
         btn1 = findViewById(R.id.moreInfo1);
@@ -132,15 +133,15 @@ public class ResultActivity extends AppCompatActivity {
         anh3 = findViewById(R.id.listImage3);
         anh4 = findViewById(R.id.listImage4);
 
-        nhan11 = "0";
-        nhan22 = "1";
-        nhan33 = "2";
-        nhan44 = "3";
-
-        ac11 = "84.03121";
-        ac22 = "12.1212424";
-        ac33 = "2.0023082";
-        ac44 = "1.01442124";
+//        nhan11 = "0";
+//        nhan22 = "1";
+//        nhan33 = "2";
+//        nhan44 = "3";
+//
+//        ac11 = "84.03121";
+//        ac22 = "12.1212424";
+//        ac33 = "2.0023082";
+//        ac44 = "1.01442124";
 
         index1 = Integer.parseInt(nhan11);
         index2 = Integer.parseInt(nhan22);

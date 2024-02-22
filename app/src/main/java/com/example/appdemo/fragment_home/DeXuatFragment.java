@@ -34,7 +34,7 @@ public class DeXuatFragment extends Fragment {
 
     TextView result;
     private String nhan1,nhan2,nhan3,nhan4,ac1,ac2,ac3,ac4;
-    private String url = "https://172.28.0.12:5000/predict";
+    private String url = "https://0ab0-2402-800-623f-cdec-b5d8-6f35-98c8-50ff.ngrok-free.app/predict";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

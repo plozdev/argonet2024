@@ -32,7 +32,7 @@ public class HienThiFragment extends Fragment {
     TextView ph,rainfall,temp,doam;
     Button reload;
     TextView string1,string2,string3,string4;
-    String url="https://172.28.0.12:5000/predict";
+    String url="https://0ab0-2402-800-623f-cdec-b5d8-6f35-98c8-50ff.ngrok-free.app/predict";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,9 +53,9 @@ public class HienThiFragment extends Fragment {
         reload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), ResultActivity.class);
-                startActivity(i);
-/*
+//                Intent i = new Intent(getActivity(), ResultActivity.class);
+//                startActivity(i);
+
                 loadingAlert.startAlertDialog();
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
@@ -91,7 +91,7 @@ public class HienThiFragment extends Fragment {
                             }
                         });
                 RequestQueue queue = Volley.newRequestQueue(getActivity());
-                queue.add(stringRequest);*/
+                queue.add(stringRequest);
             }
         });
         return  v;
