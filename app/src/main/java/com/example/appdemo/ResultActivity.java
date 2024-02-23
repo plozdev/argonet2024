@@ -1,5 +1,6 @@
 package com.example.appdemo;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -15,6 +16,7 @@ import com.example.appdemo.detail.DetailedActivity3;
 import com.example.appdemo.detail.DetailedActivity4;
 
 import java.text.DecimalFormat;
+import java.util.Random;
 
 
 public class ResultActivity extends AppCompatActivity {
@@ -37,7 +39,7 @@ public class ResultActivity extends AppCompatActivity {
             R.drawable.dauxanh,
             R.drawable.dualuoi,
             R.drawable.cam,
-            R.dautam.dudu,
+            R.drawable.dudu,
             R.drawable.dautrieu,
             R.drawable.luu,
             R.drawable.lua,
@@ -67,6 +69,8 @@ public class ResultActivity extends AppCompatActivity {
             "Lúa",
             "Cây Dưa Hấu"
     };
+    private Boolean flag = false;
+    private String test1="", test2="", test3="", test4="",test5="",test6="",test7="",test8="";
     private int index1,index2,index3,index4;
     //----------------------------
     //String de truyen di qua detail
@@ -99,7 +103,7 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-
+/*
         //get intent
         Intent i = getIntent();
         nhan11 = i.getStringExtra("nhan1");
@@ -110,7 +114,7 @@ public class ResultActivity extends AppCompatActivity {
         ac11 = i.getStringExtra("ac1");
         ac22 = i.getStringExtra("ac2");
         ac33 = i.getStringExtra("ac3");
-        ac44 = i.getStringExtra("ac4");
+        ac44 = i.getStringExtra("ac4");*/
 
         //tham chieu len listview
         btn1 = findViewById(R.id.moreInfo1);
@@ -142,6 +146,36 @@ public class ResultActivity extends AppCompatActivity {
 //        ac22 = "12.1212424";
 //        ac33 = "2.0023082";
 //        ac44 = "1.01442124";
+        if (!flag) {
+            nhan11 = randomInt();
+            nhan22 = randomInt();
+            nhan33 = randomInt();
+            nhan44 = randomInt();
+            ac11 = randomDouble();
+            ac22 = randomDouble();
+            ac33 = randomDouble();
+            ac44 = randomDouble();
+            test1 = nhan11;
+            test2 = nhan22;
+            test3 = nhan33;
+            test4 = nhan44;
+            test5 = ac11;
+            test6 = ac22;
+            test7 = ac33;
+            test8 = ac44;
+            flag = true;
+        } else {
+            nhan11 = test1;
+            nhan22 = test2;
+            nhan33 = test3;
+            nhan44 = test4;
+            ac11 = test5;
+            ac22 = test6;
+            ac33 = test7;
+            ac44 = test8;
+            flag = false;
+            test1 = test2 = test3 = test4 = test5 = test6 = test7 = test8 = "";
+        }
 
         index1 = Integer.parseInt(nhan11);
         index2 = Integer.parseInt(nhan22);
@@ -237,7 +271,7 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
     }
-
+    //VOID
     private static String roundToTwoDecimalPlaces(String myString) {
         // Convert the string to a double
         double myDouble = Double.parseDouble(myString);
@@ -250,5 +284,19 @@ public class ResultActivity extends AppCompatActivity {
 
         // Return the formatted string
         return formattedString;
+    }
+    //Random double
+    private static String randomDouble() {
+        double leftLimit = 0;
+        double rightLimit = 100;
+        double generatedDouble = leftLimit + new Random().nextDouble() * (rightLimit - leftLimit);
+        return Double.toString(generatedDouble);
+    }
+    //Random int
+    private static String randomInt() {
+        int leftLimit = 0;
+        int rightLimit = 21;
+        int generatedInteger = leftLimit + (int) (new Random().nextFloat() * (rightLimit - leftLimit));
+        return Integer.toString(generatedInteger);
     }
 }
