@@ -47,13 +47,13 @@
                         android:id="@+id/num1"
                         android:text="1"
                         android:textStyle="bold"
-                        android:textSize="40sp"
+                        android:textSize="36sp"
                         android:textColor="@color/main"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="15dp"/>
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="65dp"
-                        android:layout_height="65dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:id="@+id/listImage1"
                         android:src="@drawable/tao"
                         android:scaleType="centerCrop"
@@ -69,7 +69,8 @@
                         android:id="@+id/listName1"
                         android:text="Name"
                         android:textColor="@color/main"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
+                        android:gravity="center_vertical"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
                         android:layout_marginTop="25dp"
@@ -82,7 +83,7 @@
                         android:layout_toEndOf="@id/listName1"
                         android:layout_centerVertical="true"
                         android:text="10.02%"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textColor="@color/main"/>
                     <Button
                         android:layout_width="40dp"
@@ -113,13 +114,13 @@
                         android:id="@+id/num2"
                         android:text="2"
                         android:textStyle="bold"
-                        android:textSize="40sp"
+                        android:textSize="36sp"
                         android:textColor="@color/main"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="15dp"/>
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="65dp"
-                        android:layout_height="65dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:id="@+id/listImage2"
                         android:src="@drawable/tao"
                         android:scaleType="centerCrop"
@@ -135,7 +136,8 @@
                         android:id="@+id/listName2"
                         android:text="Name"
                         android:textColor="@color/main"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
+                        android:gravity="center_vertical"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
                         android:layout_marginTop="25dp"
@@ -148,7 +150,7 @@
                         android:layout_toEndOf="@id/listName2"
                         android:layout_centerVertical="true"
                         android:text="10.02%"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textColor="@color/main"/>
                     <Button
                         android:layout_width="40dp"
@@ -179,13 +181,13 @@
                         android:id="@+id/num3"
                         android:text="3"
                         android:textStyle="bold"
-                        android:textSize="40sp"
+                        android:textSize="36sp"
                         android:textColor="@color/main"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="15dp"/>
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="65dp"
-                        android:layout_height="65dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:id="@+id/listImage3"
                         android:src="@drawable/tao"
                         android:scaleType="centerCrop"
@@ -201,7 +203,8 @@
                         android:id="@+id/listName3"
                         android:text="Name"
                         android:textColor="@color/main"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
+                        android:gravity="center_vertical"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
                         android:layout_marginTop="25dp"
@@ -214,7 +217,7 @@
                         android:layout_toEndOf="@id/listName3"
                         android:layout_centerVertical="true"
                         android:text="10.02%"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textColor="@color/main"/>
                     <Button
                         android:layout_width="40dp"
@@ -245,13 +248,13 @@
                         android:id="@+id/num4"
                         android:text="4"
                         android:textStyle="bold"
-                        android:textSize="40sp"
+                        android:textSize="36sp"
                         android:textColor="@color/main"
                         android:layout_centerVertical="true"
                         android:layout_marginStart="15dp"/>
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:layout_width="65dp"
-                        android:layout_height="65dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:id="@+id/listImage4"
                         android:src="@drawable/tao"
                         android:scaleType="centerCrop"
@@ -267,7 +270,8 @@
                         android:id="@+id/listName4"
                         android:text="Name"
                         android:textColor="@color/main"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
+                        android:gravity="center_vertical"
                         android:textStyle="bold"
                         android:layout_centerVertical="true"
                         android:layout_marginTop="25dp"
@@ -280,7 +284,7 @@
                         android:layout_toEndOf="@id/listName4"
                         android:layout_centerVertical="true"
                         android:text="10.02%"
-                        android:textSize="18sp"
+                        android:textSize="16sp"
                         android:textColor="@color/main"/>
                     <Button
                         android:layout_width="40dp"
@@ -293,6 +297,7 @@
                         android:layout_centerVertical="true" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

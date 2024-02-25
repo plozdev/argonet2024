@@ -32,7 +32,7 @@ public class HienThiFragment extends Fragment {
     TextView ph,rainfall,temp,doam;
     Button reload;
     TextView string1,string2,string3,string4;
-    String url="https://0ab0-2402-800-623f-cdec-b5d8-6f35-98c8-50ff.ngrok-free.app/predict";
+    private String url="https://29c0-2402-800-623f-1071-a8a2-feab-22e8-fe9f.ngrok-free.app/predict";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,19 +53,14 @@ public class HienThiFragment extends Fragment {
         reload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getActivity(), ResultActivity.class);
-                startActivity(i);
-/*
+//                Intent i = new Intent(getActivity(), ResultActivity.class);
+//                startActivity(i);
+
                 loadingAlert.startAlertDialog();
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
-//                                string1.setVisibility(View.VISIBLE);
-//                                string2.setVisibility(View.VISIBLE);
-//                                string3.setVisibility(View.VISIBLE);
-//                                string4.setVisibility(View.VISIBLE);
-
                                 try {
                                     JSONObject jsonObject = new JSONObject(response);
                                     String data1 = jsonObject.getString("pH");
@@ -91,7 +86,7 @@ public class HienThiFragment extends Fragment {
                             }
                         });
                 RequestQueue queue = Volley.newRequestQueue(getActivity());
-                queue.add(stringRequest);*/
+                queue.add(stringRequest);
             }
         });
         return  v;

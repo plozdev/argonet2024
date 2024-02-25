@@ -19,16 +19,16 @@
         android:layout_gravity="center"/>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="330dp"
-        android:layout_height="183dp"
+        android:layout_width="320dp"
+        android:layout_height="177dp"
         android:id="@+id/cardImage"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
         app:cardCornerRadius="20dp"
         app:cardElevation="8dp">
         <ImageView
-            android:layout_width="330dp"
-            android:layout_height="183dp"
+            android:layout_width="320dp"
+            android:layout_height="177dp"
             android:id="@+id/detailImage"
             android:layout_gravity="center"
             android:src="@drawable/tao"
@@ -57,7 +57,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Phổ biến:"
+        android:text="Phổ biến ở địa phương:"
         android:textColor="@color/main"
         android:textStyle="bold"
         android:layout_marginStart="15dp"

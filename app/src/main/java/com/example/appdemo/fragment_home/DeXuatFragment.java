@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import org.json.JSONException;
-import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,85 +32,38 @@ public class DeXuatFragment extends Fragment {
     EditText N,P,K;
 
 
-    TextView result;
-    private String nhan1,nhan2,nhan3,nhan4,ac1,ac2,ac3,ac4;
-    private String url = "https://0ab0-2402-800-623f-cdec-b5d8-6f35-98c8-50ff.ngrok-free.app/predict";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
             // Inflate the layout for this fragment
             View v = inflater.inflate(R.layout.fragment_de_xuat, container, false);
+
+
             predict = v.findViewById(R.id.startButton);
             N = v.findViewById(R.id.N);
             P = v.findViewById(R.id.P);
             K = v.findViewById(R.id.K);
-            result = v.findViewById(R.id.resultText);
 
         LoadingAlert loadingAlert = new LoadingAlert(getActivity());
-
             predict.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
                     loadingAlert.startAlertDialog();
-                    // hit the API -> Volley
-                    StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
-                            new Response.Listener<String>() {
-                                @Override
-                                public void onResponse(String response) {
 
-                                    try {
-                                        JSONObject jsonObject = new JSONObject(response);
-//                                      ket qua nhan
-                                        nhan1 = jsonObject.getString("Nhan 1");
-                                        nhan2 = jsonObject.getString("Nhan 2");
-                                        nhan3 = jsonObject.getString("Nhan 3");
-                                        nhan4 = jsonObject.getString("Nhan 4");
-//                                        ket qua accuracy
-                                        ac1 = jsonObject.getString("Acc 1");
-                                        ac2 = jsonObject.getString("Acc 2");
-                                        ac3 = jsonObject.getString("Acc 3");
-                                        ac4 = jsonObject.getString("Acc 4");
+                    Intent i = new Intent(getActivity(),ResultActivity.class);
 
-                                    } catch (JSONException e) {
-                                        e.printStackTrace();
-                                    }
-                                    loadingAlert.closeAlertDialog();
-                                    Intent intent = new Intent(getActivity(), ResultActivity.class);
-                                    intent.putExtra("nhan1",nhan1);
-                                    intent.putExtra("nhan2",nhan2);
-                                    intent.putExtra("nhan3",nhan3);
-                                    intent.putExtra("nhan4",nhan4);
-
-                                    intent.putExtra("ac1",ac1);
-                                    intent.putExtra("ac2",ac2);
-                                    intent.putExtra("ac3",ac3);
-                                    intent.putExtra("ac4",ac4);
-
-                                    startActivity(intent);
-                                }
-                            },
-                            new Response.ErrorListener() {
-                                @Override
-                                public void onErrorResponse(VolleyError error) {
-//                                    Toast.makeText(getActivity(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                                    loadingAlert.closeAlertDialog();
-                                }
-                            }) {
-
+                    i.putExtra("N",N.getText().toString());
+                    i.putExtra("K",P.getText().toString());
+                    i.putExtra("P",K.getText().toString());
+                    new Handler().postDelayed(new Runnable() {
                         @Override
-                        protected Map<String, String> getParams() {
-                            Map<String, String> params = new HashMap<String, String>();
-                            params.put("N", N.getText().toString());
-                            params.put("P", P.getText().toString());
-                            params.put("K", K.getText().toString());
-                            return params;
+                        public void run() {
+                            loadingAlert.closeAlertDialog();
                         }
-                    };
-                    RequestQueue queue = Volley.newRequestQueue(getActivity());
-                    queue.add(stringRequest);
-
+                    },10000);
+                    startActivity(i);
                 }
             });
 

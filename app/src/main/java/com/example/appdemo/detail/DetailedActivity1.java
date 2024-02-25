@@ -58,14 +58,11 @@ public class DetailedActivity1 extends AppCompatActivity {
             PHOBIEN.setText("Không");
             NOTEPHOBIEN.setText(getString(R.string.phobien_false));
             NOTEPHOBIEN.setTextColor(Color.parseColor("#E53935"));
-
         } else if (index == 1 || index==2 || index==4 || index==5 || index==11 || index==12 || index==14 || index==15 || index==16 || index==17 || index==20 || index==21) {
             //pho bien
             PHOBIEN.setText("Có");
             NOTEPHOBIEN.setText(getString(R.string.phobien_true));
             NOTEPHOBIEN.setTextColor(Color.parseColor("#43A047"));
-
-
         } else {
             PHOBIEN.setText("Chưa rõ");
             NOTEPHOBIEN.setText("Chưa rõ");
@@ -149,4 +146,5 @@ public class DetailedActivity1 extends AppCompatActivity {
         }
 
     }
+
 }

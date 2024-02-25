@@ -19,22 +19,22 @@
         <activity
             android:name=".detail.DetailedActivity4"
             android:label="Kết quả top 4"
-            android:parentActivityName=".ResultActivity"
+
             android:exported="false" />
         <activity
             android:name=".detail.DetailedActivity3"
             android:label="Kết quả top 3"
-            android:parentActivityName=".ResultActivity"
+
             android:exported="false" />
         <activity
             android:name=".detail.DetailedActivity2"
             android:label="Kết quả top 2"
-            android:parentActivityName=".ResultActivity"
+
             android:exported="false" />
         <activity
             android:name=".detail.DetailedActivity1"
             android:label="Kết quả top 1"
-            android:parentActivityName=".ResultActivity"
+
             android:exported="false" />
         <activity
             android:name=".ResultActivity"

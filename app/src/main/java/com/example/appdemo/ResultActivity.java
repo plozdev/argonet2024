@@ -4,22 +4,37 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.appdemo.detail.DetailedActivity1;
 import com.example.appdemo.detail.DetailedActivity2;
 import com.example.appdemo.detail.DetailedActivity3;
 import com.example.appdemo.detail.DetailedActivity4;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.DecimalFormat;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 
 public class ResultActivity extends AppCompatActivity {
+    private String url = "https://29c0-2402-800-623f-1071-a8a2-feab-22e8-fe9f.ngrok-free.app/predict";
     // Mang + CONST
     private int nhanImg[] = {
             R.drawable.tao,
@@ -69,20 +84,21 @@ public class ResultActivity extends AppCompatActivity {
             "Lúa",
             "Cây Dưa Hấu"
     };
-    private Boolean flag = false;
-    private String test1="", test2="", test3="", test4="",test5="",test6="",test7="",test8="";
+    // POSITION OF TREE
     private int index1,index2,index3,index4;
     //----------------------------
-    //String de truyen di qua detail
+
     //Ten
     private String nhan1,nhan2,nhan3,nhan4;
     //Phan tram
     private String ac1,ac2,ac3,ac4;
     //Anh
     private int img1,img2,img3,img4;
-
+    //-----------------------------
+    //STRING GET INTENT
+    private String N,P,K;
     //---------------------------
-    //String de get intent
+    //String de get data from server
     //Ten
     private String nhan11,nhan22,nhan33,nhan44;
     //Phan tram
@@ -90,7 +106,7 @@ public class ResultActivity extends AppCompatActivity {
 
     //---------------------------
     //LAYOUT
-    //Nut bam
+    //Button
     public Button btn1,btn2,btn3,btn4;
     //percent
     public TextView per1,per2,per3,per4;
@@ -103,20 +119,9 @@ public class ResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
-/*
-        //get intent
-        Intent i = getIntent();
-        nhan11 = i.getStringExtra("nhan1");
-        nhan22 = i.getStringExtra("nhan2");
-        nhan33 = i.getStringExtra("nhan3");
-        nhan44 = i.getStringExtra("nhan4");
-
-        ac11 = i.getStringExtra("ac1");
-        ac22 = i.getStringExtra("ac2");
-        ac33 = i.getStringExtra("ac3");
-        ac44 = i.getStringExtra("ac4");*/
-
         //tham chieu len listview
+
+
         btn1 = findViewById(R.id.moreInfo1);
         btn2 = findViewById(R.id.moreInfo2);
         btn3 = findViewById(R.id.moreInfo3);
@@ -137,83 +142,100 @@ public class ResultActivity extends AppCompatActivity {
         anh3 = findViewById(R.id.listImage3);
         anh4 = findViewById(R.id.listImage4);
 
-//        nhan11 = "0";
-//        nhan22 = "1";
-//        nhan33 = "2";
-//        nhan44 = "3";
-//
-//        ac11 = "84.03121";
-//        ac22 = "12.1212424";
-//        ac33 = "2.0023082";
-//        ac44 = "1.01442124";
-        if (!flag) {
-            nhan11 = randomInt();
-            nhan22 = randomInt();
-            nhan33 = randomInt();
-            nhan44 = randomInt();
-            ac11 = randomDouble();
-            ac22 = randomDouble();
-            ac33 = randomDouble();
-            ac44 = randomDouble();
-            test1 = nhan11;
-            test2 = nhan22;
-            test3 = nhan33;
-            test4 = nhan44;
-            test5 = ac11;
-            test6 = ac22;
-            test7 = ac33;
-            test8 = ac44;
-            flag = true;
-        } else {
-            nhan11 = test1;
-            nhan22 = test2;
-            nhan33 = test3;
-            nhan44 = test4;
-            ac11 = test5;
-            ac22 = test6;
-            ac33 = test7;
-            ac44 = test8;
-            flag = false;
-            test1 = test2 = test3 = test4 = test5 = test6 = test7 = test8 = "";
-        }
+        //GET INTENT
+        Intent it = getIntent();
+        N = it.getStringExtra("N");
+        P = it.getStringExtra("P");
+        K = it.getStringExtra("K");
 
-        index1 = Integer.parseInt(nhan11);
-        index2 = Integer.parseInt(nhan22);
-        index3 = Integer.parseInt(nhan33);
-        index4 = Integer.parseInt(nhan44);
+        //GET DATA FROM SERVER
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
 
-        //after intent ++ Show
-        nhan1 = nhanCay[index1];
-        nhan2 = nhanCay[index2];
-        nhan3 = nhanCay[index3];
-        nhan4 = nhanCay[index4];
+                            //Ket qua nhan
+                            nhan11 = jsonObject.getString("Nhan 1");
+                            nhan22 = jsonObject.getString("Nhan 2");
+                            nhan33 = jsonObject.getString("Nhan 3");
+                            nhan44 = jsonObject.getString("Nhan 4");
+//                          ket qua accuracy
+                            ac11 = jsonObject.getString("Acc 1");
+                            ac22 = jsonObject.getString("Acc 2");
+                            ac33 = jsonObject.getString("Acc 3");
+                            ac44 = jsonObject.getString("Acc 4");
 
-        ac1 = roundToTwoDecimalPlaces(ac11);
-        ac2 = roundToTwoDecimalPlaces(ac22);
-        ac3 = roundToTwoDecimalPlaces(ac33);
-        ac4 = roundToTwoDecimalPlaces(ac44);
+                            //INDEX CAY
+                            index1 = Integer.parseInt(nhan11);
+                            index2 = Integer.parseInt(nhan22);
+                            index3 = Integer.parseInt(nhan33);
+                            index4 = Integer.parseInt(nhan44);
 
-        img1 = nhanImg[index1];
-        img2 = nhanImg[index2];
-        img3 = nhanImg[index3];
-        img4 = nhanImg[index4];
+                            ac1 = roundToTwoDecimalPlaces(ac11);
+                            ac2 = roundToTwoDecimalPlaces(ac22);
+                            ac3 = roundToTwoDecimalPlaces(ac33);
+                            ac4 = roundToTwoDecimalPlaces(ac44);
+
+                            //after get data from server
+                            nhan1 = nhanCay[index1];
+                            nhan2 = nhanCay[index2];
+                            nhan3 = nhanCay[index3];
+                            nhan4 = nhanCay[index4];
 
 
-        //SHOW
-        name1.setText(nhan1);
-        name2.setText(nhan2);
-        name3.setText(nhan3);
-        name4.setText(nhan4);
+                            img1 = nhanImg[index1];
+                            img2 = nhanImg[index2];
+                            img3 = nhanImg[index3];
+                            img4 = nhanImg[index4];
 
-        per1.setText(ac1 + "%");
-        per2.setText(ac2 + "%");
-        per3.setText(ac3 + "%");
-        per4.setText(ac4 + "%");
 
-        anh1.setImageResource(img1);
-        anh2.setImageResource(img2);
-        anh3.setImageResource(img3);
-        anh4.setImageResource(img4);
+                            //------------------------------
+
+
+
+                            //SHOW
+                            name1.setText(nhan1);
+                            name2.setText(nhan2);
+                            name3.setText(nhan3);
+                            name4.setText(nhan4);
+
+                            per1.setText(ac1 + "%");
+                            per2.setText(ac2 + "%");
+                            per3.setText(ac3 + "%");
+                            per4.setText(ac4 + "%");
+
+                            anh1.setImageResource(img1);
+                            anh2.setImageResource(img2);
+                            anh3.setImageResource(img3);
+                            anh4.setImageResource(img4);
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                      Toast.makeText(ResultActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("N", N);
+                params.put("P", P);
+                params.put("K", K);
+                return params;
+            }
+        };
+        RequestQueue queue = Volley.newRequestQueue(ResultActivity.this);
+        queue.add(stringRequest);
+
+
 
         //----------------------BUTTON
         btn1.setOnClickListener(new View.OnClickListener() {
@@ -225,6 +247,7 @@ public class ResultActivity extends AppCompatActivity {
                 i.putExtra("phantram",ac1);
                 i.putExtra("anh",img1);
                 i.putExtra("sonhancay",index1);
+
                 startActivity(i);
             }
         });
@@ -270,6 +293,9 @@ public class ResultActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+
+
     }
     //VOID
     private static String roundToTwoDecimalPlaces(String myString) {
@@ -299,4 +325,5 @@ public class ResultActivity extends AppCompatActivity {
         int generatedInteger = leftLimit + (int) (new Random().nextFloat() * (rightLimit - leftLimit));
         return Integer.toString(generatedInteger);
     }
+
 }
