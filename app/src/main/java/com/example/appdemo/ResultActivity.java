@@ -34,7 +34,7 @@ import java.util.Random;
 
 
 public class ResultActivity extends AppCompatActivity {
-    private String url = "https://29c0-2402-800-623f-1071-a8a2-feab-22e8-fe9f.ngrok-free.app/predict";
+    private String url = "https://b02e-2402-800-623f-cdec-84d6-dd08-28f4-2575.ngrok-free.app/predict";
     // Mang + CONST
     private int nhanImg[] = {
             R.drawable.tao,
