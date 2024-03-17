@@ -79,40 +79,42 @@ public class FarmDataDbHelper extends SQLiteOpenHelper {
 
 
     // Thêm một hàm để thêm dữ liệu mới vào cơ sở dữ liệu
-    public long addData(Model model) {
+    public long addData(String N, String P, String K, String temp, String humid, String ph,
+                        String rainfall, String nhan1, String ac1, String nhan2, String ac2,
+                        String nhan3, String ac3, String nhan4, String ac4) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_N, N);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_P, P);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_K, K);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_TEMP, temp);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_HUMID, humid);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_PH, ph);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_RAINFALL, rainfall);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN1, nhan1);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC1, ac1);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN2, nhan2);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC2, ac2);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN3, nhan3);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC3, ac3);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN4, nhan4);
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC4, ac4);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_N, N);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_P, P);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_K, K);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_TEMP, temp);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_HUMID, humid);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_PH, ph);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_RAINFALL, rainfall);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN1, nhan1);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC1, ac1);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN2, nhan2);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC2, ac2);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN3, nhan3);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC3, ac3);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN4, nhan4);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC4, ac4);
 
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_N, model.getNito());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_P, model.getPhotpho());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_K, model.getKali());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_TEMP, model.getTemp());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_HUMID, model.getHumid());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_PH, model.getPh());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_RAINFALL, model.getRainfall());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN1, model.getNhan1());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC1, model.getAcc1());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN2, model.getNhan2());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC2,  model.getAcc2());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN3, model.getNhan3());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC3, model.getAcc3());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN4, model.getNhan4());
-        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC4, model.getAcc4());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_N, model.getNito());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_P, model.getPhotpho());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_K, model.getKali());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_TEMP, model.getTemp());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_HUMID, model.getHumid());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_PH, model.getPh());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_RAINFALL, model.getRainfall());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN1, model.getNhan1());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC1, model.getAcc1());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN2, model.getNhan2());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC2,  model.getAcc2());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN3, model.getNhan3());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC3, model.getAcc3());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN4, model.getNhan4());
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC4, model.getAcc4());
 
         // Lấy ngày giờ hiện tại
         Calendar calendar = Calendar.getInstance();
@@ -127,43 +129,7 @@ public class FarmDataDbHelper extends SQLiteOpenHelper {
         return newRowId;
     }
 
-    public List<Model> getAllData() {
-        List<Model> modelList = new ArrayList<>();
 
-        // Mở cơ sở dữ liệu để đọc
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        // Truy vấn cơ sở dữ liệu để lấy tất cả dữ liệu từ bảng
-
-
-        Cursor cursor = db.query(
-                FarmDataContract.FarmEntry.TABLE_NAME,   // Tên bảng
-                ALL_COLUMNS,                             // Các cột cần trả về
-                null,                                   // Câu lệnh WHERE
-                null,                                   // Đối số cho câu lệnh WHERE
-                null,                                   // GROUP BY
-                null,                                   // HAVING
-                null                                    // ORDER BY
-        );
-
-        // Lặp qua các dòng của Cursor và thêm dữ liệu vào danh sách
-        while (cursor.moveToNext()) {
-            long itemId = cursor.getLong(cursor.getColumnIndexOrThrow(FarmDataContract.FarmEntry._ID));
-            String data = cursor.getString(cursor.getColumnIndexOrThrow(FarmDataContract.FarmEntry.COLUMN_NAME_DATA));
-
-            // Tạo một đối tượng Model từ dữ liệu và thêm vào danh sách
-            Model model = new Model(itemId, data);
-            modelList.add(model);
-        }
-
-        // Đóng Cursor khi đã sử dụng xong
-        cursor.close();
-
-        // Đóng cơ sở dữ liệu
-        db.close();
-
-        return modelList;
-    }
 
     // Thêm một hàm để đọc dữ liệu từ cơ sở dữ liệu
     public Cursor getData() {

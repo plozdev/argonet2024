@@ -1,6 +1,5 @@
 package com.example.appdemo;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -24,7 +23,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.appdemo.database.FarmDataDbHelper;
-import com.example.appdemo.database.Model;
 import com.example.appdemo.detail.DetailedActivity1;
 import com.example.appdemo.detail.DetailedActivity2;
 import com.example.appdemo.detail.DetailedActivity3;
@@ -38,7 +36,6 @@ import org.json.JSONObject;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 
 public class ResultActivity extends AppCompatActivity {
@@ -136,7 +133,7 @@ public class ResultActivity extends AppCompatActivity {
     protected int rowsUpdated; //Update
     protected long newRowId; //Add
     protected Cursor cursor; // Read
-    protected Model model;
+//    protected Model model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -379,8 +376,8 @@ public class ResultActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (isFabOpen) {
                     //FAB MAIN
-//                    newRowId = dbHelper.addData(N, P, K, temp, humid, ph, rainfall, nhan11,ac1, nhan22,ac2, nhan33,ac3, nhan44,ac4);
-                    newRowId = dbHelper.addData(model);
+                    newRowId = dbHelper.addData(N, P, K, temp, humid, ph, rainfall, nhan11,ac1, nhan22,ac2, nhan33,ac3, nhan44,ac4);
+//                    newRowId = dbHelper.addData(model);
                     if (newRowId != -1) {
                         // Dữ liệu đã được thêm thành công
                         Toast.makeText(ResultActivity.this, "Luu database duoc roi nha kkk", Toast.LENGTH_SHORT).show();
