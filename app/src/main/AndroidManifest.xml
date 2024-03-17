@@ -17,30 +17,30 @@
         android:theme="@style/Theme.APPDemo"
         tools:targetApi="34">
         <activity
+            android:name=".poll.PollActivity"
+            android:exported="false"
+            android:label="Đánh giá"
+            android:parentActivityName=".MainActivity"/>
+        <activity
             android:name=".detail.DetailedActivity4"
-            android:label="Kết quả top 4"
-
-            android:exported="false" />
+            android:exported="false"
+            android:label="Kết quả top 4" />
         <activity
             android:name=".detail.DetailedActivity3"
-            android:label="Kết quả top 3"
-
-            android:exported="false" />
+            android:exported="false"
+            android:label="Kết quả top 3" />
         <activity
             android:name=".detail.DetailedActivity2"
-            android:label="Kết quả top 2"
-
-            android:exported="false" />
+            android:exported="false"
+            android:label="Kết quả top 2" />
         <activity
             android:name=".detail.DetailedActivity1"
-            android:label="Kết quả top 1"
-
-            android:exported="false" />
+            android:exported="false"
+            android:label="Kết quả top 1" />
         <activity
             android:name=".ResultActivity"
             android:exported="false"
-            android:label="@string/ac2"
-            android:parentActivityName=".MainActivity" />
+            android:label="@string/ac2" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

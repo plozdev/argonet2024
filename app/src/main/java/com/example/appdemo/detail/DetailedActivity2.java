@@ -19,8 +19,6 @@ public class DetailedActivity2 extends AppCompatActivity {
     private TextView NOTEPHOBIEN;
     private TextView TIMESINHTRUONG;
     private TextView MUATHICHHOP;
-
-    private String PHOBIENTRUE,PHOBIENFALSE;
     private String nhan;
     private String phantram;
     private int anh,index;
@@ -36,9 +34,6 @@ public class DetailedActivity2 extends AppCompatActivity {
         anh = i.getIntExtra("anh",-1);
         index = i.getIntExtra("sonhancay",-1);
 
-        //GAN STRING-------------------
-        PHOBIENTRUE = getString(R.string.phobien_true);
-        PHOBIENFALSE = getString(R.string.phobien_false);
 
         //THAM CHIEU LEN LAYOUT---------------------
         IMG = findViewById(R.id.detailImage);

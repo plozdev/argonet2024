@@ -32,7 +32,7 @@ public class HienThiFragment extends Fragment {
     TextView ph,rainfall,temp,doam;
     Button reload;
     TextView string1,string2,string3,string4;
-    private String url = "https://b02e-2402-800-623f-cdec-84d6-dd08-28f4-2575.ngrok-free.app/predict";
+    private final String url = "https://ca4e-2402-800-623f-1071-6d92-a2dc-df0c-4848.ngrok-free.app/predict";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,11 +50,10 @@ public class HienThiFragment extends Fragment {
         string3 = v.findViewById(R.id.rainfall1);
         string4 = v.findViewById(R.id.ph1);
         //-----------------------------------------------------
+
         reload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Intent i = new Intent(getActivity(), ResultActivity.class);
-//                startActivity(i);
 
                 loadingAlert.startAlertDialog();
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, url,

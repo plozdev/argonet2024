@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 
+import android.database.Cursor;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -19,10 +23,14 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.appdemo.database.FarmDataDbHelper;
+import com.example.appdemo.database.Model;
 import com.example.appdemo.detail.DetailedActivity1;
 import com.example.appdemo.detail.DetailedActivity2;
 import com.example.appdemo.detail.DetailedActivity3;
 import com.example.appdemo.detail.DetailedActivity4;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,9 +42,9 @@ import java.util.Random;
 
 
 public class ResultActivity extends AppCompatActivity {
-    private String url = "https://b02e-2402-800-623f-cdec-84d6-dd08-28f4-2575.ngrok-free.app/predict";
+    private final String url = "https://ca4e-2402-800-623f-1071-6d92-a2dc-df0c-4848.ngrok-free.app/predict";
     // Mang + CONST
-    private int nhanImg[] = {
+    private final int nhanImg[] = {
             R.drawable.tao,
             R.drawable.chuoi,
             R.drawable.dauden,
@@ -60,7 +68,7 @@ public class ResultActivity extends AppCompatActivity {
             R.drawable.lua,
             R.drawable.duahau,
     };
-    private String nhanCay[] = {
+    private final String nhanCay[] = {
             "Cây Táo",
             "Cây Chuối",
             "Cây Đậu Đen",
@@ -87,7 +95,8 @@ public class ResultActivity extends AppCompatActivity {
     // POSITION OF TREE
     private int index1,index2,index3,index4;
     //----------------------------
-
+    //4yeutocambien
+    private String temp,humid,ph,rainfall;
     //Ten
     private String nhan1,nhan2,nhan3,nhan4;
     //Phan tram
@@ -114,14 +123,26 @@ public class ResultActivity extends AppCompatActivity {
     public TextView name1,name2,name3,name4;
     //anh
     public ImageView anh1,anh2,anh3,anh4;
+    //--------------------------------------
+    //FAB
+    private FloatingActionButton fab,fabCancel;
+    private ExtendedFloatingActionButton fabSave;
+    private Animation fabOpen, fabClose, rotateForward, rotateBackward;
+    private Boolean isFabOpen = false;
+
+    //---------------------------------------------
+    //DATABASE
+    protected FarmDataDbHelper dbHelper = new FarmDataDbHelper(this);
+    protected int rowsUpdated; //Update
+    protected long newRowId; //Add
+    protected Cursor cursor; // Read
+    protected Model model;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
         //tham chieu len listview
-
-
         btn1 = findViewById(R.id.moreInfo1);
         btn2 = findViewById(R.id.moreInfo2);
         btn3 = findViewById(R.id.moreInfo3);
@@ -142,6 +163,17 @@ public class ResultActivity extends AppCompatActivity {
         anh3 = findViewById(R.id.listImage3);
         anh4 = findViewById(R.id.listImage4);
 
+//        //Tham chieu fab
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fabSave = findViewById(R.id.fab_save);
+        fabCancel = findViewById(R.id.fab_cancel);
+
+        //Animtion
+        fabOpen = AnimationUtils.loadAnimation(this, R.anim.fab_open);
+        fabClose = AnimationUtils.loadAnimation(this, R.anim.fab_close);
+        rotateForward = AnimationUtils.loadAnimation(this, R.anim.rotate_foward);
+        rotateBackward = AnimationUtils.loadAnimation(this, R.anim.rotate_backward);
+
         //GET INTENT
         Intent it = getIntent();
         N = it.getStringExtra("N");
@@ -155,6 +187,12 @@ public class ResultActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             JSONObject jsonObject = new JSONObject(response);
+
+                            temp = jsonObject.getString("Nhiet do");
+                            ph = jsonObject.getString("pH");
+                            humid = jsonObject.getString("Do am");
+                            rainfall = jsonObject.getString("Luong mua");
+
 
                             //Ket qua nhan
                             nhan11 = jsonObject.getString("Nhan 1");
@@ -294,7 +332,73 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
+    //------------------------FAB
 
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isFabOpen) {
+                    fab.startAnimation(rotateBackward);
+                    fabSave.startAnimation(fabClose);
+                    fabCancel.startAnimation(fabClose);
+                    fabSave.setClickable(false);
+                    fabCancel.setClickable(false);
+                    isFabOpen = false;
+                } else {
+                    fab.startAnimation(rotateForward);
+                    fabSave.startAnimation(fabOpen);
+                    fabCancel.startAnimation(fabOpen);
+                    fabSave.setClickable(true);
+                    fabCancel.setClickable(true);
+                    isFabOpen = true;
+                }
+            }
+        });
+        fabCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isFabOpen) {
+                    fab.startAnimation(rotateBackward);
+                    fabSave.startAnimation(fabClose);
+                    fabCancel.startAnimation(fabClose);
+                    fabSave.setClickable(false);
+                    fabCancel.setClickable(false);
+                    isFabOpen = false;
+                } else {
+                    fab.startAnimation(rotateForward);
+                    fabSave.startAnimation(fabOpen);
+                    fabCancel.startAnimation(fabOpen);
+                    fabSave.setClickable(true);
+                    fabCancel.setClickable(true);
+                    isFabOpen = true;
+                }
+            }
+        });
+        fabSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isFabOpen) {
+                    //FAB MAIN
+//                    newRowId = dbHelper.addData(N, P, K, temp, humid, ph, rainfall, nhan11,ac1, nhan22,ac2, nhan33,ac3, nhan44,ac4);
+                    newRowId = dbHelper.addData(model);
+                    if (newRowId != -1) {
+                        // Dữ liệu đã được thêm thành công
+                        Toast.makeText(ResultActivity.this, "Luu database duoc roi nha kkk", Toast.LENGTH_SHORT).show();
+                        Log.d("Database", "Dữ liệu đã được thêm vào với ID: " + newRowId);
+                    } else {
+                        // Đã xảy ra lỗi khi thêm dữ liệu
+                        Log.e("Database", "Đã xảy ra lỗi khi thêm dữ liệu");
+                    }
+                } else {
+                    fab.startAnimation(rotateForward);
+                    fabSave.startAnimation(fabOpen);
+                    fabCancel.startAnimation(fabOpen);
+                    fabSave.setClickable(true);
+                    fabCancel.setClickable(true);
+                    isFabOpen = true;
+                }
+            }
+        });
 
     }
     //VOID
@@ -311,19 +415,6 @@ public class ResultActivity extends AppCompatActivity {
         // Return the formatted string
         return formattedString;
     }
-    //Random double
-    private static String randomDouble() {
-        double leftLimit = 0;
-        double rightLimit = 100;
-        double generatedDouble = leftLimit + new Random().nextDouble() * (rightLimit - leftLimit);
-        return Double.toString(generatedDouble);
-    }
-    //Random int
-    private static String randomInt() {
-        int leftLimit = 0;
-        int rightLimit = 21;
-        int generatedInteger = leftLimit + (int) (new Random().nextFloat() * (rightLimit - leftLimit));
-        return Integer.toString(generatedInteger);
-    }
+
 
 }

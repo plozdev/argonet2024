@@ -28,9 +28,8 @@ import com.example.appdemo.ResultActivity;
 import com.example.appdemo.loading.LoadingAlert;
 
 public class DeXuatFragment extends Fragment {
-    Button predict;
-    EditText N,P,K;
-
+    private Button predict;
+    private EditText N,P,K;
 
 
     @Override
@@ -45,28 +44,21 @@ public class DeXuatFragment extends Fragment {
             P = v.findViewById(R.id.P);
             K = v.findViewById(R.id.K);
 
-        LoadingAlert loadingAlert = new LoadingAlert(getActivity());
             predict.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
-                    loadingAlert.startAlertDialog();
-
                     Intent i = new Intent(getActivity(),ResultActivity.class);
 
                     i.putExtra("N",N.getText().toString());
-                    i.putExtra("K",P.getText().toString());
-                    i.putExtra("P",K.getText().toString());
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            loadingAlert.closeAlertDialog();
-                        }
-                    },10000);
+                    i.putExtra("P",P.getText().toString());
+                    i.putExtra("K",K.getText().toString());
+
                     startActivity(i);
                 }
             });
 
             return  v;
     }
+
 }
