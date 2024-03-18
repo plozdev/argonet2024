@@ -32,7 +32,7 @@ public class HienThiFragment extends Fragment {
     TextView ph,rainfall,temp,doam;
     Button reload;
     TextView string1,string2,string3,string4;
-    private final String url = "https://ca4e-2402-800-623f-1071-6d92-a2dc-df0c-4848.ngrok-free.app/predict";
+    private final String url = "https://e5dd-2402-800-623f-1071-4cbd-dc70-fdbf-d3b7.ngrok-free.app/predict";
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

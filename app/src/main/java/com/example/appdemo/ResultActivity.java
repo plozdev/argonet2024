@@ -39,7 +39,7 @@ import java.util.Map;
 
 
 public class ResultActivity extends AppCompatActivity {
-    private final String url = "https://ca4e-2402-800-623f-1071-6d92-a2dc-df0c-4848.ngrok-free.app/predict";
+    private final String url = "https://e5dd-2402-800-623f-1071-4cbd-dc70-fdbf-d3b7.ngrok-free.app/predict";
     // Mang + CONST
     private final int nhanImg[] = {
             R.drawable.tao,
@@ -246,6 +246,25 @@ public class ResultActivity extends AppCompatActivity {
                             anh3.setImageResource(img3);
                             anh4.setImageResource(img4);
 
+                            name1.setVisibility(View.VISIBLE);
+                            name2.setVisibility(View.VISIBLE);
+                            name3.setVisibility(View.VISIBLE);
+                            name4.setVisibility(View.VISIBLE);
+
+                            per1.setVisibility(View.VISIBLE);
+                            per2.setVisibility(View.VISIBLE);
+                            per3.setVisibility(View.VISIBLE);
+                            per4.setVisibility(View.VISIBLE);
+
+                            anh1.setVisibility(View.VISIBLE);
+                            anh2.setVisibility(View.VISIBLE);
+                            anh3.setVisibility(View.VISIBLE);
+                            anh4.setVisibility(View.VISIBLE);
+
+                            btn1.setVisibility(View.VISIBLE);
+                            btn2.setVisibility(View.VISIBLE);
+                            btn3.setVisibility(View.VISIBLE);
+                            btn4.setVisibility(View.VISIBLE);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -376,11 +395,10 @@ public class ResultActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (isFabOpen) {
                     //FAB MAIN
-                    newRowId = dbHelper.addData(N, P, K, temp, humid, ph, rainfall, nhan11,ac1, nhan22,ac2, nhan33,ac3, nhan44,ac4);
-//                    newRowId = dbHelper.addData(model);
+                    newRowId = dbHelper.addData(N, P, K, temp, humid, ph, rainfall, nhan1,ac1, nhan2,ac2, nhan3,ac3, nhan4,ac4);
                     if (newRowId != -1) {
                         // Dữ liệu đã được thêm thành công
-                        Toast.makeText(ResultActivity.this, "Luu database duoc roi nha kkk", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ResultActivity.this, "Đã Lưu", Toast.LENGTH_SHORT).show();
                         Log.d("Database", "Dữ liệu đã được thêm vào với ID: " + newRowId);
                     } else {
                         // Đã xảy ra lỗi khi thêm dữ liệu

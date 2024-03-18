@@ -5,13 +5,15 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".poll.PollActivity">
+    tools:context=".PollActivity">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/listView"
-        android:layout_margin="8dp"/>
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"/>
+
 
 
 

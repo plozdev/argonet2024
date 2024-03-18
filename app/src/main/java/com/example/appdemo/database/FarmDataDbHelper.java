@@ -19,13 +19,13 @@ public class FarmDataDbHelper extends SQLiteOpenHelper {
     private static final String SQL_CREATE_ENTRIES =
             "CREATE TABLE " + FarmDataContract.FarmEntry.TABLE_NAME + " (" +
                     FarmDataContract.FarmEntry._ID + " INTEGER PRIMARY KEY," +
-                    FarmDataContract.FarmEntry.COLUMN_NAME_N + " REAL," +
-                    FarmDataContract.FarmEntry.COLUMN_NAME_P + " REAL," +
-                    FarmDataContract.FarmEntry.COLUMN_NAME_K + " REAL," +
-                    FarmDataContract.FarmEntry.COLUMN_NAME_TEMP + " REAL," +
-                    FarmDataContract.FarmEntry.COLUMN_NAME_HUMID + " REAL," +
-                    FarmDataContract.FarmEntry.COLUMN_NAME_PH + " REAL," +
-                    FarmDataContract.FarmEntry.COLUMN_NAME_RAINFALL + " REAL," +
+                    FarmDataContract.FarmEntry.COLUMN_NAME_N + " TEXT," +
+                    FarmDataContract.FarmEntry.COLUMN_NAME_P + " TEXT," +
+                    FarmDataContract.FarmEntry.COLUMN_NAME_K + " TEXT," +
+                    FarmDataContract.FarmEntry.COLUMN_NAME_TEMP + " TEXT," +
+                    FarmDataContract.FarmEntry.COLUMN_NAME_HUMID + " TEXT," +
+                    FarmDataContract.FarmEntry.COLUMN_NAME_PH + " TEXT," +
+                    FarmDataContract.FarmEntry.COLUMN_NAME_RAINFALL + " TEXT," +
                     FarmDataContract.FarmEntry.COLUMN_NAME_NHAN1 + " TEXT," +
                     FarmDataContract.FarmEntry.COLUMN_NAME_AC1 + " TEXT," +
                     FarmDataContract.FarmEntry.COLUMN_NAME_NHAN2 + " TEXT," +
@@ -34,7 +34,8 @@ public class FarmDataDbHelper extends SQLiteOpenHelper {
                     FarmDataContract.FarmEntry.COLUMN_NAME_AC3 + " TEXT," +
                     FarmDataContract.FarmEntry.COLUMN_NAME_NHAN4 + " TEXT," +
                     FarmDataContract.FarmEntry.COLUMN_NAME_AC4 + " TEXT," +
-                    FarmDataContract.FarmEntry.COLUMN_NAME_TIME + " TEXT)";
+                    FarmDataContract.FarmEntry.COLUMN_NAME_TIME + " TEXT," +
+                    FarmDataContract.FarmEntry.COLUMN_NAME_CHECK + " TEXT)";
 
     private static final String SQL_DELETE_ENTRIES =
             "DROP TABLE IF EXISTS " + FarmDataContract.FarmEntry.TABLE_NAME;
@@ -73,7 +74,8 @@ public class FarmDataDbHelper extends SQLiteOpenHelper {
             FarmDataContract.FarmEntry.COLUMN_NAME_AC3,
             FarmDataContract.FarmEntry.COLUMN_NAME_NHAN4,
             FarmDataContract.FarmEntry.COLUMN_NAME_AC4,
-            FarmDataContract.FarmEntry.COLUMN_NAME_TIME
+            FarmDataContract.FarmEntry.COLUMN_NAME_TIME,
+            FarmDataContract.FarmEntry.COLUMN_NAME_CHECK
     };
 
 
@@ -100,22 +102,6 @@ public class FarmDataDbHelper extends SQLiteOpenHelper {
         values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN4, nhan4);
         values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC4, ac4);
 
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_N, model.getNito());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_P, model.getPhotpho());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_K, model.getKali());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_TEMP, model.getTemp());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_HUMID, model.getHumid());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_PH, model.getPh());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_RAINFALL, model.getRainfall());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN1, model.getNhan1());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC1, model.getAcc1());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN2, model.getNhan2());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC2,  model.getAcc2());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN3, model.getNhan3());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC3, model.getAcc3());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN4, model.getNhan4());
-//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC4, model.getAcc4());
-
         // Lấy ngày giờ hiện tại
         Calendar calendar = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm dd-MM-yyyy", Locale.getDefault());
@@ -123,13 +109,11 @@ public class FarmDataDbHelper extends SQLiteOpenHelper {
 
         // Thêm thông tin thời gian vào cơ sở dữ liệu
         values.put(FarmDataContract.FarmEntry.COLUMN_NAME_TIME, dateTimeNow);
-
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_CHECK,"null");
         long newRowId = db.insert(FarmDataContract.FarmEntry.TABLE_NAME, null, values);
         db.close();
         return newRowId;
     }
-
-
 
     // Thêm một hàm để đọc dữ liệu từ cơ sở dữ liệu
     public Cursor getData() {
@@ -149,7 +133,7 @@ public class FarmDataDbHelper extends SQLiteOpenHelper {
     // Thêm một hàm để cập nhật dữ liệu trong cơ sở dữ liệu
     public int updateData(long id, String N, String P, String K, String temp, String humid, String ph,
                           String rainfall, String nhan1, String ac1, String nhan2, String ac2,
-                          String nhan3, String ac3, String nhan4, String ac4, String time) {
+                          String nhan3, String ac3, String nhan4, String ac4, String time, String check) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(FarmDataContract.FarmEntry.COLUMN_NAME_N, N);
@@ -168,6 +152,7 @@ public class FarmDataDbHelper extends SQLiteOpenHelper {
         values.put(FarmDataContract.FarmEntry.COLUMN_NAME_NHAN4, nhan4);
         values.put(FarmDataContract.FarmEntry.COLUMN_NAME_AC4, ac4);
         values.put(FarmDataContract.FarmEntry.COLUMN_NAME_TIME,time);
+        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_CHECK,check);
         int count = db.update(
                 FarmDataContract.FarmEntry.TABLE_NAME,
                 values,

@@ -1,13 +1,18 @@
 package com.example.appdemo.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.appdemo.PollActivity;
 import com.example.appdemo.R;
 
 public class CustomCursorAdapter extends CursorAdapter {
@@ -41,36 +46,64 @@ public class CustomCursorAdapter extends CursorAdapter {
         String title,time,n,p,k,temp,humid,rain,ph,n1,n2,n3,n4,ac1,ac2,ac3,ac4;
 
         // Đọc dữ liệu từ Cursor và đặt nội dung vào TextView
-        title = cursor.getString(cursor.getColumnIndexOrThrow("_ID"));
-        time = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_TIME"));
-        n = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_N"));
-        p = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_P"));
-        k = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_K"));
-        temp = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_TEMP"));
-        humid = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_HUMID"));
-        rain = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_PH"));
-        ph = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_RAINFALL"));
-        n1 = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_NHAN1"));
-        n2 = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_NHAN2"));
-        n3 = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_NHAN3"));
-        n4 = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_NHAN4"));
-        ac1 = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_AC1"));
-        ac2 = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_AC2"));
-        ac3 = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_AC3"));
-        ac4 = cursor.getString(cursor.getColumnIndexOrThrow("COLUMN_NAME_AC4"));
+        title = cursor.getString(cursor.getColumnIndexOrThrow("_id"));
+        time = cursor.getString(cursor.getColumnIndexOrThrow("time"));
+        n = cursor.getString(cursor.getColumnIndexOrThrow("N"));
+        p = cursor.getString(cursor.getColumnIndexOrThrow("P"));
+        k = cursor.getString(cursor.getColumnIndexOrThrow("K"));
+        temp = cursor.getString(cursor.getColumnIndexOrThrow("temp"));
+        humid = cursor.getString(cursor.getColumnIndexOrThrow("humid"));
+        rain = cursor.getString(cursor.getColumnIndexOrThrow("rainfall"));
+        ph = cursor.getString(cursor.getColumnIndexOrThrow("ph"));
+        n1 = cursor.getString(cursor.getColumnIndexOrThrow("nhan1"));
+        n2 = cursor.getString(cursor.getColumnIndexOrThrow("nhan2"));
+        n3 = cursor.getString(cursor.getColumnIndexOrThrow("nhan3"));
+        n4 = cursor.getString(cursor.getColumnIndexOrThrow("nhan4"));
+        ac1 = cursor.getString(cursor.getColumnIndexOrThrow("ac1"));
+        ac2 = cursor.getString(cursor.getColumnIndexOrThrow("ac2"));
+        ac3 = cursor.getString(cursor.getColumnIndexOrThrow("ac3"));
+        ac4 = cursor.getString(cursor.getColumnIndexOrThrow("ac4"));
 
         groupTitle.setText(title);
         timeTitle.setText(time);
-        childItemN.setText(n);
-        childItemP.setText(p);
-        childItemK.setText(k);
-        childItemTemp.setText(temp + " °C");
-        childItemHumid.setText(humid + " %");
-        childItemRainfall.setText(rain + " mm");
-        childItempH.setText(ph);
-        nhan1tv.setText("Nhãn: " + n1 + "(" + ac1 + "%)");
-        nhan2tv.setText("Nhãn: " + n2 + "(" + ac2 + "%)");
-        nhan3tv.setText("Nhãn: " + n3 + "(" + ac3 + "%)");
-        nhan4tv.setText("Nhãn: " + n4 + "(" + ac4 + "%)");
+        childItemN.setText("N: " + n);
+        childItemP.setText("P: " + p);
+        childItemK.setText("K: " + k);
+        childItemTemp.setText("Nhiệt độ: " + temp + " °C");
+        childItemHumid.setText("Độ ẩm: " + humid + " %");
+        childItemRainfall.setText("Lượng mưa: " + rain + " mm");
+        childItempH.setText("Độ pH: " + ph);
+        nhan1tv.setText("Nhãn: " + n1 + " (" + ac1 + "%)");
+        nhan2tv.setText("Nhãn: " + n2 + " (" + ac2 + "%)");
+        nhan3tv.setText("Nhãn: " + n3 + " " + ac3 + "%)");
+        nhan4tv.setText("Nhãn: " + n4 + " (" + ac4 + "%)");
+
+        final long itemId = cursor.getLong(cursor.getColumnIndexOrThrow(FarmDataContract.FarmEntry._ID));
+        Button tickButton,cancelButton;
+        tickButton = view.findViewById(R.id.tickButton);
+        cancelButton = view.findViewById(R.id.cancelButton);
+//        final String flag = cm
+            tickButton.setOnClickListener(v -> {
+                cancelButton.setVisibility(View.INVISIBLE);
+//                ((PollActivity) context).updateDataTrue(itemId, "true");
+                Toast.makeText(context, "Cảm ơn bạn đã đánh giá!", Toast.LENGTH_SHORT).show();
+            });
+
+            cancelButton.setOnClickListener(v -> {
+
+                tickButton.setVisibility(View.INVISIBLE);
+//                ((PollActivity) context).updateDataFalse(itemId, "false");
+                Toast.makeText(context, "Cảm ơn bạn đã đánh giá!", Toast.LENGTH_SHORT).show();
+            });
+//        } else {
+//            tickButton.setClickable(false);
+//            cancelButton.setClickable(false);
+//        }
     }
+//    private void updateData(String data) {
+//        SQLiteDatabase database;
+//        FarmDataDbHelper dbHelper = new FarmDataDbHelper(this);
+//        SQLiteDatabase db = dbHelper.getWritableDatabase();
+//
+//    }
 }

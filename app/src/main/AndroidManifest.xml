@@ -17,7 +17,7 @@
         android:theme="@style/Theme.APPDemo"
         tools:targetApi="34">
         <activity
-            android:name=".poll.PollActivity"
+            android:name=".PollActivity"
             android:exported="false"
             android:label="Đánh giá"
             android:parentActivityName=".MainActivity"/>

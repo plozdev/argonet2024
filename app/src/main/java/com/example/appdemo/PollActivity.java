@@ -1,5 +1,6 @@
-package com.example.appdemo.poll;
+package com.example.appdemo;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -37,6 +38,7 @@ public class PollActivity extends AppCompatActivity {
             FarmDataContract.FarmEntry.COLUMN_NAME_NHAN4,
             FarmDataContract.FarmEntry.COLUMN_NAME_AC4,
             FarmDataContract.FarmEntry.COLUMN_NAME_TIME
+//            FarmDataContract.FarmEntry.COLUMN_NAME_CHECK
     };
 
     @Override
@@ -58,5 +60,45 @@ public class PollActivity extends AppCompatActivity {
         );
         CustomCursorAdapter adapter = new CustomCursorAdapter(this,cursor);
         listView.setAdapter(adapter);
+
+//        adapter.setOnDeleteButtonClickListener(id -> {
+//            deleteItem(id);
+//            //RefreshLV
+//            adapter.changeCursor(cursor);
+//        });
     }
+//    private void deleteItem(long id) {
+//        FarmDataDbHelper dbHelper = new FarmDataDbHelper(this);
+//        SQLiteDatabase db = dbHelper.getWritableDatabase();
+//
+//        //Xoas
+//        db.delete(FarmDataContract.FarmEntry.TABLE_NAME,
+//                FarmDataContract.FarmEntry._ID + " = ?",
+//                new String[]{String.valueOf(id)});
+//
+//        db.close();
+//    }
+//    public void updateDataFalse(long itemId, String data) {
+//
+//        FarmDataDbHelper dbHelper = new FarmDataDbHelper(this);
+//        SQLiteDatabase db = dbHelper.getWritableDatabase();
+//
+//        ContentValues values = new ContentValues();
+//        values.put(FarmDataContract.FarmEntry.COLUMN_NAME_CHECK, data);
+//        db.close();
+//    }
+//
+//    public void updateDataTrue(long itemId, String data) {
+//
+//        FarmDataDbHelper dbHelper = new FarmDataDbHelper(this);
+//        SQLiteDatabase db = dbHelper.getWritableDatabase();
+//
+//        ContentValues values = new ContentValues();
+//        values.put("check", data);
+//        int rowsUpdated = db.update(FarmDataContract.FarmEntry.TABLE_NAME, values,
+//            FarmDataContract.FarmEntry.COLUMN_NAME_CHECK + " = ?", new String[]{String.valueOf(itemId)});
+//
+//        db.close();
+//    }
+
 }

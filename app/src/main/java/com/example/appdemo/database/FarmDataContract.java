@@ -24,6 +24,7 @@ public final class FarmDataContract {
         public static final String COLUMN_NAME_NHAN4 = "nhan4";
         public static final String COLUMN_NAME_AC4 = "ac4";
         public static final String COLUMN_NAME_TIME = "time";
+        public static final String COLUMN_NAME_CHECK = "check";
 
     }
 }

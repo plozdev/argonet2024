@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <TextView
         android:layout_width="wrap_content"
@@ -20,7 +21,7 @@
         android:id="@+id/timeTitle"
         android:text="dd/mm/yyyy"
         android:textColor="@color/black"
-        android:textStyle="italic|"
+        android:textStyle="italic"
         android:textSize="12sp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="4dp"
@@ -28,7 +29,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/childN"
+        android:id="@+id/childItemN"
         android:layout_below="@+id/timeTitle"
         android:textSize="16sp"
         android:textColor="@color/black"
@@ -39,155 +40,69 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/childP"
+        android:id="@+id/childItemP"
         android:textSize="16sp"
         android:textColor="@color/black"
         android:text="P:"
-        android:layout_below="@+id/childN"
+        android:layout_below="@+id/childItemN"
         android:layout_marginStart="12dp"
         android:layout_marginTop="4dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/childK"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:text="K:"
-        android:layout_below="@+id/childP"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/childTemp"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:text="Nhiệt độ:"
-        android:layout_below="@+id/childK"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/childRainfall"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:text="Lượng mưa:"
-        android:layout_below="@+id/childTemp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/childHumid"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:text="Độ ẩm:"
-        android:layout_below="@+id/childRainfall"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/childpH"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:text="Độ pH:"
-        android:layout_below="@+id/childHumid"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="4dp"/>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/childItemN"
-        android:layout_toRightOf="@+id/childN"
-        android:layout_below="@+id/timeTitle"
-        android:text="null"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="8dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/childItemP"
-        android:layout_toRightOf="@+id/childP"
-        android:text="null"
-        android:textSize="16sp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/childN"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="8dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/childItemK"
-        android:layout_toRightOf="@+id/childK"
-        android:text="null"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:layout_below="@+id/childP"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="8dp"/>
+        android:text="K:"
+        android:layout_below="@+id/childItemP"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/childItemTemp"
-        android:layout_toRightOf="@+id/childTemp"
-        android:text="null"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:layout_below="@+id/childK"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="8dp"/>
-
-
+        android:text="Nhiệt độ:"
+        android:layout_below="@+id/childItemK"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/childItemRainfall"
-        android:layout_toRightOf="@+id/childRainfall"
-        android:text="null"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:layout_below="@+id/childTemp"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="8dp"/>
+        android:text="Lượng mưa:"
+        android:layout_below="@+id/childItemTemp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/childItemHumid"
-        android:layout_toRightOf="@+id/childHumid"
-        android:text="null"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:layout_below="@+id/childRainfall"
-        android:layout_marginTop="4dp"
-        android:layout_marginStart="8dp"/>
+        android:text="Độ ẩm:"
+        android:layout_below="@+id/childItemRainfall"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="4dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/childItempH"
-        android:layout_toRightOf="@+id/childpH"
-        android:text="null"
         android:textSize="16sp"
         android:textColor="@color/black"
-        android:layout_below="@+id/childHumid"
+        android:text="Độ pH:"
+        android:layout_below="@+id/childItemHumid"
+        android:layout_marginStart="12dp"
         android:layout_marginTop="4dp"
-        android:layout_marginStart="8dp"/>
+        android:layout_marginBottom="12dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -196,8 +111,7 @@
         android:text="Nhãn 1:"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="128dp"
+        android:layout_marginStart="200dp"
         android:layout_below="@+id/timeTitle"
         android:layout_marginTop="8dp"/>
     <TextView
@@ -207,8 +121,7 @@
         android:text="Nhãn 2:"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="128dp"
+        android:layout_marginStart="200dp"
         android:layout_below="@+id/nhan1tv"
         android:layout_marginTop="4dp"/>
     <TextView
@@ -218,8 +131,7 @@
         android:text="Nhãn 3:"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="128dp"
+        android:layout_marginStart="200dp"
         android:layout_below="@+id/nhan2tv"
         android:layout_marginTop="4dp"/>
     <TextView
@@ -229,10 +141,30 @@
         android:text="Nhãn 4:"
         android:textColor="@color/black"
         android:textSize="16sp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="128dp"
+        android:layout_marginStart="200dp"
         android:layout_below="@+id/nhan3tv"
         android:layout_marginTop="4dp"/>
 
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/tickButton"
+        android:layout_below="@+id/nhan4tv"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="200dp"
+        android:background="@drawable/tick96"
+        android:layout_marginBottom="12dp"
+        app:backgroundTint="@null"/>
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/cancelButton"
+        android:layout_below="@+id/nhan4tv"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/cancel96"
+        app:backgroundTint="@null"
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="270dp"/>
 
 </RelativeLayout>
